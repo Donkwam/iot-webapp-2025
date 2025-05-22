@@ -47,14 +47,18 @@ IoT 개발자 과정 ***ASP.NET Core*** 학습 리포지토리
 - 웹을 요청 / 응답하는 프로토콜
 - HTTPs : HTTP with secute. 보안을 강화한 HTTP 프로토콜
 
-## 웹 표준기술 학습
+### 웹 표준기술 학습
 
 #### VS Code 확장설치
 - Live Server
 
 #### HTML 구조
 - html 태그 내에 head, body로 구성(무조건!)
-- README.md에도 HTEML
+- README.md에도 HTML 태그를 그대로 사용가능(heading은 적용안됨)
+- VS Code에서 html:5 자동생성
+- CSS가 소스라인을 많이 사용. css는 외부스타일로 분리 사용
+- JS도 소스라인이 매우 김. JS도 외부스크립트로 분리 사용
+- 웹 브라우저의 개발자모드(F12)로 디버깅을 하는 것이 일반적
 
 ## 2일차
 
