@@ -54,6 +54,7 @@ IoT 개발자 과정 ***ASP.NET Core*** 학습 리포지토리
 
 #### HTML 구조
 -html 태그 내에 head, body로 구성(무조건!)
+- README.md에도 HTEML
 
 ## 2일차
 
