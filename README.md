@@ -48,7 +48,7 @@
 - 웹을 요청 / 응답하는 프로토콜
 - HTTPs : HTTP with secute. 보안을 강화한 HTTP 프로토콜
 
-### 웹 표준기술 학습
+### 웹 표준기술  - HTML
 
 #### VS Code 확장설치
 - Live Server
