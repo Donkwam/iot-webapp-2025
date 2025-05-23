@@ -107,12 +107,28 @@
     ```
 - html 태그 속성
     - id : 웹페이지 하나당 한번만 쓸것
-    - class : 여러번 사용가능
+    - class : 여러번, 여러개 사용가능
 
 - UI기술로 많은 분야에서 사용
     - Qt, PyQt, Electron, Flutter(모바일), ReactNative(모바일), React.js, ...
 [소스](./day01/html08.html)
 
 ## 2일차
+
+### 웹 표준기술 - CSS
+- HTML, CSS, JS 동일하게 " (쌍따옴표), '(홑따옴표) 동시 사용가능
+- Python은 ''를 추천, 웹은 ""를 추천
+
+### 웹 표준기술 - JavaScript
+- Java(컴파일러언어)와 아무런 관계없음
+- JavaScript(스크립트언어)
+
+#### 기본문법
+- HTML내에 script 태그 내에 작성
+- 변수 선언이 var(전역,지역), let(지역)
+- 문장 끝에 ;생략이 가능하지만 되도록 사용할 것
+- 키워드
+
+    <img src="./image/web0001.png" width="600">
 
 ## 3일차
