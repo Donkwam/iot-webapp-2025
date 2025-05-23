@@ -131,4 +131,7 @@
 
     <img src="./image/web0001.png" width="600">
 
+- 화면메시지박스 : alert()
+- 디버깅 출력 : console.log()
+
 ## 3일차
