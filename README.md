@@ -297,7 +297,8 @@
     - Alert : Button 클래스와 동일 primary ~ light(link는 없음)
     - Breadcrumb : 메뉴 경로
     - Navbar, Navs & Tabs : 메뉴 내비게이션바
-    - Button, Close button, button group : 버튼관련
+    - Button, Close button, button group : 버튼관련 컴포넌트
+    - Card, Placeholders, Popovers, Toasts, Tooltips : 화면 영역 컴포넌트
 
 ### 프론트엔드 활용
 - HTML5 + CSS3 + JS + BootStrap 응용예제
