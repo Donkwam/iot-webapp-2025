@@ -292,13 +292,47 @@
     - gx : 왼쪽, 오른쪽 안여백
     - gy : 위쪽, 아래쪽 안여백
 
+- 여백을위한 클래스
+    - -number포함 : 1~5까지
+    - p, ps, pt, pb, pe, px, py : padding
+    - m, ms(left), mt, mb, me(right), mx, my : margin
+    - start, top, end, bottom : 배율로 조정
+
 - 컴포넌트 학습
     - Accordion
     - Alert : Button 클래스와 동일 primary ~ light(link는 없음)
     - Breadcrumb : 메뉴 경로
     - Navbar, Navs & Tabs : 메뉴 내비게이션바
     - Button, Close button, button group : 버튼관련 컴포넌트
-    - Card, Placeholders, Popovers, Toasts, Tooltips : 화면 영역 컴포넌트
+    - Card, Placeholders, Modal, `Popovers`, Toasts, `Tooltips` : 화면 영역 컴포넌트
+    - Paination : 게시판 페이지 컴포넌트
+    - Progress, Spinners : 프로그레스바, 대기용 컴포넌트
+    - Carousel : 이미지 갤러리
+
+- 아이콘
+    - [사이트](https://icons.getbootstrap.com/)
+    - 부트스트랩이 지원해주는 아이콘
+    - Python PyQt, leaflet.js(Folium) 등에도 사용가능
+    - FontAwesome, XEIcon, Google Icon Fonts
+
+#### 이미지팁
+- 화면 UI 설계시 이미지 찾는 시간을 절약하기 위해 만든 사이트
+- placechold image Site
+    - [플레이스홀드](https://placehold.co/)
+    - [로렙플릭커](https://loremflickr.com/)
+    - [로렘픽섬](https://picsum.photos/)(추천)
+
+#### 부트스트랩 템플릿 사이트
+- 유로 템플릿
+    - https://wrapbootstrap.com/templates
+    - https://themeforest.net/search/sns%20bootstrap : 필요한 소스코드도 구매가능
+    - https://themewagon.com/theme-price/pro/
+- 무료 템플릿
+    - https://startbootstrap.com/ : 무료 템플릿 중 최고
+    - https://bootswatch.com/
+    - https://bootstrapmade.com/ : 출처를 표기해야 함
+    - https://themewagon.com/theme-price/free/
+    - https://graygrids.com/templates?type=free
 
 ### 프론트엔드 활용
 - HTML5 + CSS3 + JS + BootStrap 응용예제
