@@ -341,6 +341,9 @@
     - Bootstrap Image Gallery
 
 
+https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
+
+
 ## 4일차
 
 ### 프론트엔드 활용
