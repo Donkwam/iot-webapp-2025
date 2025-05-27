@@ -1,0 +1,9 @@
+/* 부가적인 스타일 */
+.feature {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    height: 3rem;
+    width: 3rem;
+}
