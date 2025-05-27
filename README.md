@@ -351,6 +351,13 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 - Modern Business 템플릿 클로닝
     - https://startbootstrap.com/template/modern-business
 
+    <img src="./image/web0006.png" width="700">
+
+    - 압축파일 다운로드 후 압축해제
+
+#### HTML5 Responsive Web template
+- https://html5up.net/
+
 #### Modern Business 클로닝
 1. 모든 웹체이지 시작은 index.* (.html, .asp, .jsp, .cshtml ....)
 2. 폴더 구성 : css, js, assets
@@ -360,10 +367,24 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 5. Bootstrap Icon 링크 클릭 후 다운로드
     - https://github.com/twbs/icons/releases/tag/v1.13.1
     - bootstrap-icons-1.13.1.zip
+    - css 폴더 아래 fonts 폴더 생성
+    - bootstrap-icons.woff, bootstrap-icons.woff2 붙여넣기
+6. body 마지막 Bootstrap js 링크 추가
+7. body 내의 태그영역으로 나눠서 클로닝
+    - div, main
+        - div, nav
+        - div, header
+        - div, feature
+        - div, testimonial
+        - div, blog_section
+    - div, footer
+8. 태그 내에 Bootstrap 클래스 적용
+9. Bootstrap Example의 테마 적용
+10. 전체화면
 
+    
 
-#### HTML5 Responsive Web template
-- https://html5up.net/
-
+## 5일차
 
 ### ASP.NET Core
+- 웹 서버기술

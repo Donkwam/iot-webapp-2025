@@ -22,7 +22,7 @@
             // 테마작업
             $('#btnLight').addClass('active'); // 기본테마 다크로 지정
             $('#blog_section').css({
-                    'background-color' : 'rgba(240, 240, 240, 0.2)'
+                    'background-color' : 'rgba(240, 240, 240, 0.4)'
                 }); // 로드시 디자인 적용
 
             $('#btnLight').on('click', function() {
@@ -31,7 +31,7 @@
                 $('#btnLight').addClass('active');
                 $('#iconTheme').attr('class', 'bi bi-brightness-high-fill'); // 선택된 테마의 아이콘이 표시
                 $('#blog_section').css({
-                    'background-color' : 'rgba(240, 240, 240, 0.2)'
+                    'background-color' : 'rgba(240, 240, 240, 0.4)'
                 }); // 라이트테마에서 배경 연한 회색으로
             });
             $('#btnDark').click(function() {
