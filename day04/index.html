@@ -14,9 +14,63 @@
     <link rel="stylesheet" href="./css/bootstrap-icons.min.css" />
     <!-- Custom CSS. 부가적이 스타일 적용은 여기에 -->
     <link rel="stylesheet" href="./css/style.css" />
+    <!-- jQuery 추가 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+        // 페이지로드 시 발생이벤트 window.loaded와 동일
+        $(document).ready(function() {
+            // 테마작업
+            $('#btnLight').addClass('active'); // 기본테마 다크로 지정
+            $('#blog_section').css({
+                    'background-color' : 'rgba(240, 240, 240, 0.2)'
+                }); // 로드시 디자인 적용
+
+            $('#btnLight').on('click', function() {
+                $('html').attr('data-bs-theme','light');
+                $('#btnDark').removeClass('active'); // 라이트를 눌렀으니 다크는 해제
+                $('#btnLight').addClass('active');
+                $('#iconTheme').attr('class', 'bi bi-brightness-high-fill'); // 선택된 테마의 아이콘이 표시
+                $('#blog_section').css({
+                    'background-color' : 'rgba(240, 240, 240, 0.2)'
+                }); // 라이트테마에서 배경 연한 회색으로
+            });
+            $('#btnDark').click(function() {
+                $('html').attr('data-bs-theme', 'dark');
+                $('#btnLight').removeClass('active'); 
+                $('#btnDark').addClass('active'); // 다크를 눌렀으니 다크는 해제
+                $('#iconTheme').attr('class', 'bi bi-brightness-high-fill'); 
+                $('#blog_section').css({
+                    'background-color' : 'rgba(66, 66, 66, 0.5)'
+                }); // 다크테마에서 어두운 회색으로
+            });
+        });
+        // HTML Bootstrap 클래스, dark, light, whith 등의 클래스는 삭제나 변경
+    </script>
 </head>
 
 <body class="d-flex flex-column h-100">
+    <!-- 오른쪽아래 바닥 테마변경 아이콘영역 -->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle theme-menu">
+        <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center" 
+                data-bs-toggle="dropdown" id="bd-theme" type="button">
+            <i id="iconTheme" class="bi bi-brightness-high-fill"></i>
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <button id="btnLight" type="button" class="dropdown-item d-flex align-items-center"
+                        data-bs-theme-value="light" aria-pressed="true">
+                    <i class="bi bi-brightness-high-fill"></i>&nbsp;Light
+                </button>
+            </li>
+            <li>
+                <button id="btnDark" type="button" class="dropdown-item d-flex align-items-center"
+                        data-bs-theme-value="dark" aria-pressed="false">
+                    <i class="bi bi-moon-stars-fill"></i>&nbsp;Dark
+                </button>
+            </li>
+        </ul>
+    </div>
+    
     <div id="main" class="flex-shrink-0">
         <!-- Navigation -->
         <div id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -40,20 +94,20 @@
             </div>
         </div>
         <!-- Header -->
-        <div id="header" class="bg-dark py-5">
+        <div id="header" class="py-5">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">
+                            <h1 class="display-5 fw-bolder text mb-2">
                                 The Bootstrap 5 Template - Modern Business
                             </h1>
-                            <p class="lead fw-normal text-white-50 mb-5">Lorem ipsum, dolor sit amet consectetur
+                            <p class="lead fw-normal text-50 mb-5">Lorem ipsum, dolor sit amet consectetur
                                 adipisicing elit. Laborum laboriosam dicta eum harum possimus corporis similique ex
                                 exercitationem atque dolores?</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="#testimonial">Testimonial</a>
+                                <a class="btn btn-outline btn-lg px-4" href="#testimonial">Testimonial</a>
                             </div>
                         </div>
                     </div>
@@ -106,7 +160,7 @@
             </div>
         </div>
         <!-- Testimonial section -->
-        <div id="testimonial" class="py-5 bg-light">
+        <div id="testimonial" class="py-5 bg">
             <div class="container px-5 my-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-10 col-xl-7 text-center">
@@ -242,18 +296,18 @@
         </div>
     </div>
     <!-- Footer -->
-    <div id="footer" class="bg-dark py-4 mt-auto">
+    <div id="footer" class="py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
-                    <div class="small m-0 text-white">Copyright &copy; My Website 2025</div>
+                    <div class="small m-0">Copyright &copy; My Website 2025</div>
                 </div>
                 <div class="col-auto">
-                    <a class="link-light small" href="#!">Privacy</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="#!">Terms</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="#!">Contact</a>
+                    <a class="link small" href="#!">Privacy</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="link small" href="#!">Terms</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="link small" href="#!">Contact</a>
                 </div>
             </div>
         </div>
@@ -261,6 +315,7 @@
 
 
     <!-- Bootstrap JS는 항상 여기. script태그는 여는태그,닫는태그가 모두 있어야 -->
+     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <!-- 부가적인 스크립트가 필요하면 여기에 -->
     <script src="./js/script.js"></script>

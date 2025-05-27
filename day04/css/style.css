@@ -1,4 +1,5 @@
 /* 부가적인 스타일 */
+/* bootstrap 아이콘영역 깨짐 해결*/
 .feature {
     display: inline-flex;
     align-items: center;
@@ -6,4 +7,9 @@
     font-size: 1.5rem;
     height: 3rem;
     width: 3rem;
+}
+/* 메인영역 배경색 */
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(248, 249, 250, 1) !important;
 }
