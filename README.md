@@ -439,3 +439,48 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
     - 최상위 문 사용 안함 만 체크
 5. 빌드 후 실행
 6. properties > launchSetting.json 에서 자신의 포트번호 확인
+7. 기본 ASP.NET Core 웹앱에 포함된 프론트엔드 라이브러리
+    - Bootstrap 5.1.0
+    - jQuery 3.6.0
+    - 최신버전으로 변경하고 싶으면 다운로드 받아서 구성하면 됨
+    - 경로 - \wwwroot\lib\bootstrap\dist
+
+#### ASP.NET Core 프로젝트 구조
+- Properties > launchSettings.json - 웹서버 실행 설정
+- wwwroot - 정적 리소스 구성한 폴더
+    - css : 웹페이지에 추가적인 css
+    - js : 웹페이지 추가적인 js
+    - lib : Bootstrap, jQuery 등의 라이브러리 포함된 폴더
+    - favicon.ico : 웹페이지 대표 아이콘
+- 종속성 : .NET 관련 라이브러리(종속성)
+- Controllers : MVC 패턴 중 Controller 관리
+    - HomeController : Controller postfix는 제거하고 호출. Views에 postfix를 제거한 폴더 존재
+    - 메서드 : 메서드 이름과 동일한 cshtml이 존재
+    - 비즈니스 로직이 포함
+- Models : MVC 중 Model
+    - 데이터, DB관련된 소스 포함
+- Views : MVC 중 View 역할
+    - Controller에 포함된 클래스와 동일한 이름의 폴더, cshtml이 존재
+    - cshtml : html + ASP.NET 기술이 포함된 웹페이지
+        - @, asp-append-version, asp-controller, asp-action 등의 속성
+    - _layout.cshtml : 전체 HTML 틀을 구성. @RenderBody()에서 표현
+    - 웹사이트는 중간 content 이외는 모양이 항상 동일.
+    - cshtml 중 _로 시작하는 파일은 여러번 공유하겠다는 뜻
+- appsettings.json : 로그 등 애플리케이션 설정
+- Program.cs : C# 프로그램 시작점. 실제 웹앱이 시작될 때 필요한 초기화 담당
+    - 중요 소스
+
+    ```cs
+    // ...
+    app.UseStaticFiles();   // 정적인 HTML, CSS, JS를 사용하겠다
+    app.UseRouting();       // 라우팅으로 URL을 사용하겠다
+    app.UseAuthorization(); // 권한 설정을 사용하겠다
+    // http://localhost:port//Home/Index/2 와 같이 URL을 사용하겠다
+    // RESTful URL -> Rest API를 위한 요소 중 하나
+    // Program.cs 에서 중요한 파트
+    app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+    // ...
+    ```
+
+#### ASP.NET Core 페이지 생성법
+1. 

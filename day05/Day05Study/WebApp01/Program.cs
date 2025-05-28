@@ -1,4 +1,4 @@
-namespace WebApp01
+﻿namespace WebApp01
 {
     public class Program
     {
@@ -17,14 +17,9 @@ namespace WebApp01
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }
