@@ -389,4 +389,53 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 ## 5일차
 
 ### ASP.NET Core
-- 웹 서버기술
+- ASP : Active Server Page. Classic ASP라고 부름. 동적인 웹페이지를 만드는 기술
+- 프론트엔드(HTML + CSS + JS) 상에서 동작하는 기술을 동적 웹페이지라고 부르지 않음
+- 동적 웹페이지 : 사용자가 웹서버에 요청을 해서 값이 변경되는 것
+
+    <img src="./image/web0007.png" width="600">
+
+- IIS : Internet Information Service. MS가 윈도우 운영체제에 포함시킨 `웹 서버`
+    - 윈도우 프로그램 추가 제거(appwiz.cpl)
+    - 윈도우 기능 켜기/끄기 > 인터넷 정보 서비스 클릭 후 확인
+
+- 윈도우 설정은 일반 사용자용, 제어판은 개발자용
+    - 제어판 > Windows Tools > IIS(인터넷 정보 서비스) 관리자
+
+    <img src="./image/web0008.png" width="600">
+
+- Java가 1995년 출현하면서 Classic ASP, Classic VB 등의 옛날 MS기술이 위협
+- 2000년 초반에 .NET 프레임워크 출시
+    - C#, VB(.NET) 새로운 언어 들이 포함됨
+    - 위의 언어들로 개발할 수 있는 웹 기술인 ASP.NET 등장
+    - 이후 언어는 계속 발전
+    - 2016년에 크로스플랫폼 ASP.NET Core
+    - 2020년에 .NET Framework(Windows전용)을 .NET 5.0(크로스플랫폼)로 변경
+
+#### ASP.NET Core 장점
+- 빠르다 : 초창기 ASP.NET은 C#으로 Winforms 만드는 것처럼 개발(개발생산성은 좋지만 렌더링속도가 무지하게 느렸음). MVC모델로 분리하면서 윈폼식 개발을 제거
+- 오픈소스 : Java JSP/Spring, Python Flask 등이 오픈소스로 발전하니까 MS도 오픈소스 전향
+- 크로스플랫폼 : Windows에서만 동작하던 걸, MacOS, Linux 등으로 확대시킴
+- 종속성 주입 : Dependencty Injection. Spring 쪽에 특화되던 기술을 접목해옴. 개발시간 절약
+- 개발용 웹서버 : IIS가 Visual Studio에 포함. 웹서버 설정을 할 필요가 없음
+- 클라우드 친화적 : MS Azure 등의 클라우드와 연계가 쉬움
+- MVC 모델 : Model View Controller를 따로 개발. Spring Boot도 동일
+- 최적화가 잘 되어 있음
+
+#### ASP.NET Core 활용처
+- 웹 사이트 개발 : 기본적인 내용
+- 풀스택 개발 : 프론트엔드(React, Vue, Angular js) + 백엔드(ASP.NET Core)
+- API 서버 개발 : TMDB 영화 데이터 조회 API, Youtube API, 데이터포털 API 등의 데이터만 주고받는 서비스 개발
+- 도메인특화 솔루션 개발 : MES, ERP, SmartFactory, SmartShip 등
+- 이커머스 개발 : 쇼핑몰, 온라인 서점, 여행예매 사이트 등 
+
+
+#### ASP.NET Core 시작
+1. Visual Studio 시작 > 새 프로젝트 만들기
+2. ASP.NET Core 웹앱(Model-View-Controller)선택
+3. 프로젝트 이름, 위치, 솔루션 이름 입력
+4. 추가정보
+    - HTTPS : 보안 인증서를 신청, 다운로드 설정을 해야 함. 복잡, 체크해제
+    - 최상위 문 사용 안함 만 체크
+5. 빌드 후 실행
+6. properties > launchSetting.json 에서 자신의 포트번호 확인
