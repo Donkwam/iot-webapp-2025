@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MyHomepage</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons.min.css/"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebApp01.styles.css" asp-append-version="true" />
 </head>
@@ -27,6 +28,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area-controller="Side" asp-action="Index">Side</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area-controller="Board" asp-action="Index">게시판</a>
                         </li>
                     </ul>
                 </div>

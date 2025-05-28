@@ -388,6 +388,12 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 
 ## 5일차
 
+### 웹개발 기술 용어
+- MPA - Multi Page Application. 전통적인 여러페이지로 작동하는 웹
+- SPA : Single Page Application. 페이지를 이동해도 새로고침 없이 한페이지에서 작동하는 웹
+- CSR : Client-Side Rendering. 대부분의 SPA가 동작하는 방식. 렌더링을 브라우저에서 처리
+- SSR : Server-Side Rendering : MPA가 위주. HTML을 서버에서 생성후 전달(naver, google 등 포털)
+
 ### ASP.NET Core
 - ASP : Active Server Page. Classic ASP라고 부름. 동적인 웹페이지를 만드는 기술
 - 프론트엔드(HTML + CSS + JS) 상에서 동작하는 기술을 동적 웹페이지라고 부르지 않음
@@ -463,7 +469,7 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
     - Controller에 포함된 클래스와 동일한 이름의 폴더, cshtml이 존재
     - cshtml : html + ASP.NET 기술이 포함된 웹페이지
         - @, asp-append-version, asp-controller, asp-action 등의 속성
-    - _layout.cshtml : 전체 HTML 틀을 구성. @RenderBody()에서 표현
+    - _Layout.cshtml : 전체 HTML 틀을 구성. @RenderBody()에서 표현
     - 웹사이트는 중간 content 이외는 모양이 항상 동일.
     - cshtml 중 _로 시작하는 파일은 여러번 공유하겠다는 뜻
 - appsettings.json : 로그 등 애플리케이션 설정
@@ -478,9 +484,73 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
     // http://localhost:port//Home/Index/2 와 같이 URL을 사용하겠다
     // RESTful URL -> Rest API를 위한 요소 중 하나
     // Program.cs 에서 중요한 파트
+    // Controller Home, action의 Index는 Default값
     app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
     // ...
     ```
 
 #### ASP.NET Core 페이지 생성법
-1. 
+1. 기존 Controller가 존재할 때
+    - cshtml에 asp-controller, asp-action 속성 추가
+    - Controller에 asp-action의 속성값과 동일한 메서드 추가
+    - Views 폴더에 같은 이름의 cshtml을 생성, 작성
+
+2. Controller가 없을때 1
+    - Controllers 폴더에서 컨트롤러 생성
+    - MVC 컨트롤러 비어있음 선택
+    - SideController 클래스 생성
+    - Index() 메서드에서 오른쪽 버튼 뷰 추가 선택
+    - Razor 뷰 - 비어있음 선택
+    - Index.cshtml 생성 후 작성
+
+3. **Controller가 없을때 2**
+    - `EntityFramwork 사용하여 뷰가 포함됨 MVC 컨트롤러` 또는 `읽기/쓰기 동작이 포함된 컨트롤러` 중 선택
+    - BoardController 클래스 생성
+
+        <img src="./image/web0009.png" width="600">
+
+    - 메서드 Index() 부터 Delete() 까지 총 8개 메서드 생성
+    - Models 폴더에서 모델 Board.cs 추가
+    - 인덱스 마다 뷰 추가. Razor 뷰 선택(Razor 뷰 - 비어있음 아님!)
+
+        <img src="./image/web0010.png" width="600">
+
+        <img src="./image/web0011.png" width="600">
+
+        - 템플릿 : Create, Delete, Derails, List, Edit (DB의 CRUD와 매핑)
+        - 모델 클래스 : MVC, MVVN에서 Model 클래스가 포함되어야 함 (DB 설정이 필요)
+
+    - Razor 뷰 선택
+    - Index.cshtml 생성
+    - _Layout.cshtml 에 내비게이션 메뉴 추가
+
+#### ASP.NET Core MVC
+
+<img src="./image/web0012.png" width="650">
+
+- MVVM과 MVC 패턴의 구조에대해 설명할 수 있어야 함!
+- 현재 기본적인 웹개발의 표준. Java도 Spring Boot MVC
+- 프론트엔드가 심각한 스파게티 코드였으면 현재는 최소화하고 있음
+- Razor 구문 : @로 시작하는 C# 문법에 대한 이해
+
+- DB연동방법
+    - 전통적인 방법 : WPF나 윈앱에서 연동방법
+    - 현대적인 방법 : EntityFramwork 방식. 쿼리를 사용하지 않음
+        - DB First : DB를 설계해 놓고, 연결, 사용하는 방식
+        - Code First : 모델 클래스만 만들어 놓고, EF가 DB에 테이블을 자동 생성
+
+#### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝
+1. Kelly-1.0.0.zip 다운로드
+2. 정적파일 분석
+3. index.html 오픈, VS View > Shared > _Layout.cshtml 디자인 태그 옮기기
+4. wwwroot 내 vendor 에서 Bootstrap 관련 폴더삭제
+    - php 관련도 추후 삭제 필요
+5. _Layout.cshtml 작업
+
+    <img src="./image/web0013.png" width="600">
+
+## 5일차
+
+### ASP.NET Core
+
+#### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
