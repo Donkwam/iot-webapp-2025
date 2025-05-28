@@ -225,12 +225,11 @@
 ## 3일차
 
 ### 반응형웹
-- UTF-8이 적용 전 : 한국어웹, 영어웹, 일본어웹 등 웹페이지를 언어별로 개발 필요
-- 반응형 웹 이전 : PC용, 모바일용, 태블릿용 등 따로 웹사이트 다중 개발필요
-- Responsive Web : 웹, 모바일 등의 기기와 해상도에 상관없이 하나의 웹으로 모두 표현할 수 있는 웹화면 개발 기술
+- UTF-8 적용 전 : 한국어웹, 영어웹, 일본어웹 등 웹페이지를 언어별로 개발필요
+- 반응형 웹 이전 : PC용, 모바일용, 태블릿용 등 웹사이트 다중 개발필요
 - 문제 : 하나의 웹페이지가 수정되면 다른 웹페이지들도 다 수정 -> 시간, 돈의 Loss
-- 하나의 웹페이지로 기기, 언어문제를 전부해결하고자 나온 기술중 화면쪽 -> 반응형웹
-- `Responsive Web` : 웹, 모바일등의 기기와 해상도에 상관없이 하나의 웹으로 모두 표현할 수 있는 웹화면 개발 기술
+- 하나의 웹페이지로 기기, 언어문제를 전부 해결하고자 나온 기술중 화면쪽 -> 반응협웹
+- `Responsive Web` : 웹, 모바일 등의 기기와 해상도에 상관없이 하나의 웹으로 모두 표현할 수 있는 웹화면 개발 기술
 
 - HTML5에 반응형 웹 메타태그만 사용
 
@@ -243,7 +242,7 @@
     ```
 
 - 부트스트랩으로 학습
-- https://inpa.tistory.com/category/Style%20Sheet/Bootstrap5?page=2
+- https://inpa.tistory.com/category/Style%20Sheet/Bootstrap5?page=2 
 
 ### 부트스트랩
 - 현재 전세계적으로 가장 많이 사용되는 오픈소스 CSS, JS 프레임워크
@@ -264,18 +263,18 @@
     <img src="./image/web0004.png" width="600">
 
 - 미디어쿼리 : 웹페이지 사이즈에 따른 사용법을 위해 필요
-    - Bootstrap에서 sm, md, lg 등의 infix를 사용할 경우가 많음
-    - X-Small : None(사용할 이름없음)(< 576px)
+    - Bootstrap에서 sm, md, lg 등의 infix를 사용할 경우가 많음  
+    - X-Small : None(사용할 이름없음) (< 576px)
     - Small : sm (>= 576px)
     - Medium : md (>= 768px)
-    - Large : lg (>=992px)
-    - Extra large : xl (>=1200px)
-    - Extra extra large : xxl (>=1400px)
+    - Large : lg (>= 992px)
+    - Extra large : xl (>= 1200px)
+    - Extra extra large : xxl (>= 1400px)
 
 - 컨테이너 : 기본 레이아웃에서 가장 중요! 그리드 스타일이라고 부름
     - container - 일반적인 넓이사용. 양쪽에 여백이 존재
     - container-fluid - 여백없이 웹페이지를 꽉채우는 스타일
-    - container > row > grid 형식으로 사용
+    - container > row > col 형식으로 사용
     - 각 grid는 최대 12개까지 사용
 
 - 정렬 클래스
@@ -292,7 +291,7 @@
     - gx : 왼쪽, 오른쪽 안여백
     - gy : 위쪽, 아래쪽 안여백
 
-- 여백을위한 클래스
+- 여백을 위한 클래스
     - -number포함 : 1~5까지
     - p, ps, pt, pb, pe, px, py : padding
     - m, ms(left), mt, mb, me(right), mx, my : margin
@@ -302,10 +301,10 @@
     - Accordion
     - Alert : Button 클래스와 동일 primary ~ light(link는 없음)
     - Breadcrumb : 메뉴 경로
-    - Navbar, Navs & Tabs : 메뉴 내비게이션바
-    - Button, Close button, button group : 버튼관련 컴포넌트
+    - Navbar, Navs & tabs : 메뉴 내비게이션바
+    - Button, Close button, Button group : 버튼관련 컴포넌트
     - Card, Placeholders, Modal, `Popovers`, Toasts, `Tooltips` : 화면 영역 컴포넌트
-    - Paination : 게시판 페이지 컴포넌트
+    - Pagination : 게시판 페이지 컴포넌트
     - Progress, Spinners : 프로그레스바, 대기용 컴포넌트
     - Carousel : 이미지 갤러리
 
@@ -319,52 +318,52 @@
 
 #### 이미지팁
 - 화면 UI 설계시 이미지 찾는 시간을 절약하기 위해 만든 사이트
-- placechold image Site
+- placehold image Site
     - [플레이스홀드](https://placehold.co/)
     - [로렙플릭커](https://loremflickr.com/)
     - [로렘픽섬](https://picsum.photos/)(추천)
 
 #### 부트스트랩 템플릿 사이트
-- 유로 템플릿
-    - https://wrapbootstrap.com/templates
+- 유료 템플릿
+    - https://wrapbootstrap.com/templates 
     - https://themeforest.net/search/sns%20bootstrap : 필요한 소스코드도 구매가능
     - https://themewagon.com/theme-price/pro/
+    - https://themes.getbootstrap.com/ 부트스트랩 공식 유료템플릿
 - 무료 템플릿
-    - https://startbootstrap.com/ : 무료 템플릿 중 최고
+    - https://startbootstrap.com/ : 무표 템플릿 중 최고
     - https://bootswatch.com/
     - https://bootstrapmade.com/ : 출처를 표기해야 함
     - https://themewagon.com/theme-price/free/
-    - https://graygrids.com/templates?type=free
+    - https://graygrids.com/templates/tag/bootstrap-5?type=free
 
 ### 프론트엔드 활용
 - HTML5 + CSS3 + JS + BootStrap 응용예제
     - Bootstrap Image Gallery
 
+    https://github.com/user-attachments/assets/fd0f5d4a-a8b7-4c84-bbad-cd682d40f5c0
 
-https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
-
-
+    
 ## 4일차
 
 ### 프론트엔드 활용
-- HTML5 + CSS3 + JS 응용예제
+- HTML5 + CC3 + JS 응용예제
 - Modern Business 템플릿 클로닝
-    - https://startbootstrap.com/template/modern-business
+    - https://startbootstrap.com/template/modern-business 
 
     <img src="./image/web0006.png" width="700">
 
     - 압축파일 다운로드 후 압축해제
 
-#### HTML5 Responsive Web template
+#### HTML5 Responsive Web template 
 - https://html5up.net/
 
 #### Modern Business 클로닝
-1. 모든 웹체이지 시작은 index.* (.html, .asp, .jsp, .cshtml ....)
+1. 모든 웹페이지 시작은 index.* (.html, .asp, .jsp, .cshtml...)
 2. 폴더 구성 : css, js, assets
 3. favicon.ico 구성
 4. Bootstrap 다운로드 후 폴더에 구성(not CDN)
     - bootstrap-5.3.6-dist.zip
-5. Bootstrap Icon 링크 클릭 후 다운로드
+5. Bootstrap Icon 링크 클릭 다운로드
     - https://github.com/twbs/icons/releases/tag/v1.13.1
     - bootstrap-icons-1.13.1.zip
     - css 폴더 아래 fonts 폴더 생성
@@ -382,19 +381,17 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 9. Bootstrap Example의 테마 적용
 10. 전체화면
 
+    https://github.com/user-attachments/assets/d205515e-3edc-4a2a-a538-a08137dad2b1
 
-    https://github.com/user-attachments/assets/bc1cbedb-2bb3-49ac-9283-72c0c65aee0b
-
-
-## 5일차
+### 5일차
 
 ### 웹개발 기술 용어
-- MPA - Multi Page Application. 전통적인 여러페이지로 작동하는 웹
-- SPA : Single Page Application. 페이지를 이동해도 새로고침 없이 한페이지에서 작동하는 웹
+- SPA : Single Page Applicaiton. 페이지를 이동해도 새로고침 없이 한페이지에서 작동하는 웹
+- MPA : Multi Page Applicaiton. 전통적인 여러페이지로 작동하는 웹
 - CSR : Client-Side Rendering. 대부분의 SPA가 동작하는 방식. 렌더링을 브라우저에서 처리
-- SSR : Server-Side Rendering : MPA가 위주. HTML을 서버에서 생성후 전달(naver, google 등 포털)
+- SSR : Server-Side Rendering. MPA가 위주. HTML을 서버에서 생성후 전달(naver, google 등 포털)
 
-### ASP.NET Core
+### ASP.NET Core 
 - ASP : Active Server Page. Classic ASP라고 부름. 동적인 웹페이지를 만드는 기술
 - 프론트엔드(HTML + CSS + JS) 상에서 동작하는 기술을 동적 웹페이지라고 부르지 않음
 - 동적 웹페이지 : 사용자가 웹서버에 요청을 해서 값이 변경되는 것
@@ -407,11 +404,11 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 
 - 윈도우 설정은 일반 사용자용, 제어판은 개발자용
     - 제어판 > Windows Tools > IIS(인터넷 정보 서비스) 관리자
-
+    
     <img src="./image/web0008.png" width="600">
 
 - Java가 1995년 출현하면서 Classic ASP, Classic VB 등의 옛날 MS기술이 위협
-- 2000년 초반에 .NET 프레임워크 출시
+- 2000년 초반에 .NET 프레임워크를 출시
     - C#, VB(.NET) 새로운 언어 들이 포함됨
     - 위의 언어들로 개발할 수 있는 웹 기술인 ASP.NET 등장
     - 이후 언어는 계속 발전
@@ -419,7 +416,7 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
     - 2020년에 .NET Framework(Windows전용)을 .NET 5.0(크로스플랫폼)로 변경
 
 #### ASP.NET Core 장점
-- 빠르다 : 초창기 ASP.NET은 C#으로 Winforms 만드는 것처럼 개발(개발생산성은 좋지만 렌더링속도가 무지하게 느렸음). MVC모델로 분리하면서 윈폼식 개발을 제거
+- 빠르다 : 초창기 ASP.NET은 C#으로 Winforms 만드는 것처럼 개발(개발생산성은 좋지만 렌더링 속도가 무지하게 느렸음). MVC모델로 분리하면서 윈폼식 개발을 제거
 - 오픈소스 : Java JSP/Spring, Python Flask 등이 오픈소스로 발전하니까 MS도 오픈소스 전향
 - 크로스플랫폼 : Windows에서만 동작하던 걸, MacOS, Linux 등으로 확대시킴
 - 종속성 주입 : Dependencty Injection. Spring 쪽에 특화되던 기술을 접목해옴. 개발시간 절약
@@ -429,21 +426,20 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 - 최적화가 잘 되어 있음
 
 #### ASP.NET Core 활용처
-- 웹 사이트 개발 : 기본적인 내용
-- 풀스택 개발 : 프론트엔드(React, Vue, Angular js) + 백엔드(ASP.NET Core)
-- API 서버 개발 : TMDB 영화 데이터 조회 API, Youtube API, 데이터포털 API 등의 데이터만 주고받는 서비스 개발
+- `웹 사이트` 개발 : 기본적인 내용
+- `풀스택` 개발 : 프론트엔드(React, Vue, Angular js) + 백엔드(ASP.NET Core)
+- `API 서버` 개발 : TMDB 영화 데이터 조회 API, Youtube API, 데이터포털 API 등의 데이터만 주고받는 서비스 개발
 - 도메인특화 솔루션 개발 : MES, ERP, SmartFactory, SmartShip 등
-- 이커머스 개발 : 쇼핑몰, 온라인 서점, 여행예매 사이트 등 
-
+- 이커머스 개발 : 쇼핑몰, 온라인 서점, 여행예매 사이트 등
 
 #### ASP.NET Core 시작
 1. Visual Studio 시작 > 새 프로젝트 만들기
-2. ASP.NET Core 웹앱(Model-View-Controller)선택
-3. 프로젝트 이름, 위치, 솔루션 이름 입력
+2. ASP.NET Core 웹앱(Model-View-Controller) 선택
+3. 프로젝트 이름, 위치, 솔루션 이름 입력 
 4. 추가정보
     - HTTPS : 보안 인증서를 신청, 다운로드 설정을 해야 함. 복잡, 체크해제
-    - 최상위 문 사용 안함 만 체크
-5. 빌드 후 실행
+    - 최상위 문 사용 안함 만 체크 
+5. 빌드 후 실행 
 6. properties > launchSetting.json 에서 자신의 포트번호 확인
 7. 기본 ASP.NET Core 웹앱에 포함된 프론트엔드 라이브러리
     - Bootstrap 5.1.0
@@ -454,23 +450,23 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 #### ASP.NET Core 프로젝트 구조
 - Properties > launchSettings.json - 웹서버 실행 설정
 - wwwroot - 정적 리소스 구성한 폴더
-    - css : 웹페이지에 추가적인 css
+    - css : 웹페이지 추가적인 css
     - js : 웹페이지 추가적인 js
     - lib : Bootstrap, jQuery 등의 라이브러리 포함된 폴더
     - favicon.ico : 웹페이지 대표 아이콘
-- 종속성 : .NET 관련 라이브러리(종속성)
+- 종속성 : .NET 관련 NuGet 패키지 라이브러리(종속성)
 - Controllers : MVC 패턴 중 Controller 관리
-    - HomeController : Controller postfix는 제거하고 호출. Views에 postfix를 제거한 폴더 존재
+    - HomeController : Controller postfix는 제거하고 호출. Views에 postfix를 제거한 폴더 존재    
     - 메서드 : 메서드 이름과 동일한 cshtml이 존재
     - 비즈니스 로직이 포함
 - Models : MVC 중 Model
     - 데이터, DB관련된 소스 포함
 - Views : MVC 중 View 역할
     - Controller에 포함된 클래스와 동일한 이름의 폴더, cshtml이 존재
-    - cshtml : html + ASP.NET 기술이 포함된 웹페이지
+    - cshtml : HTML + ASP.NET 기술이 포함된 웹페이지
         - @, asp-append-version, asp-controller, asp-action 등의 속성
     - _Layout.cshtml : 전체 HTML 틀을 구성. @RenderBody()에서 표현
-    - 웹사이트는 중간 content 이외는 모양이 항상 동일.
+    - 웹사이트는 중간 content 이외는 모양이 항상 동일
     - cshtml 중 _로 시작하는 파일은 여러번 공유하겠다는 뜻
 - appsettings.json : 로그 등 애플리케이션 설정
 - Program.cs : C# 프로그램 시작점. 실제 웹앱이 시작될 때 필요한 초기화 담당
@@ -478,13 +474,13 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 
     ```cs
     // ...
-    app.UseStaticFiles();   // 정적인 HTML, CSS, JS를 사용하겠다
+    app.UseStaticFiles();   // 정적인 HTML,CSS,JS를 사용하겠다
     app.UseRouting();       // 라우팅으로 URL을 사용하겠다
     app.UseAuthorization(); // 권한 설정을 사용하겠다
-    // http://localhost:port//Home/Index/2 와 같이 URL을 사용하겠다
+    // http://localhost:port/Home/Index/2 와 같이 URL을 사용하겠다
     // RESTful URL -> Rest API를 위한 요소 중 하나
     // Program.cs 에서 중요한 파트
-    // Controller Home, action의 Index는 Default값
+    // controller의 Home, action의 Index는 Default값
     app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
     // ...
     ```
@@ -497,14 +493,14 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 
 2. Controller가 없을때 1
     - Controllers 폴더에서 컨트롤러 생성
-    - MVC 컨트롤러 비어있음 선택
+    - MVC 컨트롤러 - 비어있음 선택
     - SideController 클래스 생성
     - Index() 메서드에서 오른쪽 버튼 뷰 추가 선택
     - Razor 뷰 - 비어있음 선택
     - Index.cshtml 생성 후 작성
 
 3. **Controller가 없을때 2**
-    - `EntityFramwork 사용하여 뷰가 포함됨 MVC 컨트롤러` 또는 `읽기/쓰기 동작이 포함된 컨트롤러` 중 선택
+    - `EntityFramework 사용하여 뷰가 포함된 MVC 컨트롤러` 또는 `읽기/쓰기 동작이 포함된 컨트롤러` 중 선택
     - BoardController 클래스 생성
 
         <img src="./image/web0009.png" width="600">
@@ -517,7 +513,7 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 
         <img src="./image/web0011.png" width="600">
 
-        - 템플릿 : Create, Delete, Derails, List, Edit (DB의 CRUD와 매핑)
+        - 템플릿 : Create, Delete, Details, List, Edit (DB의 CRUD와 매핑)
         - 모델 클래스 : MVC, MVVN에서 Model 클래스가 포함되어야 함 (DB 설정이 필요)
 
     - Razor 뷰 선택
@@ -528,22 +524,23 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 
 <img src="./image/web0012.png" width="650">
 
-- MVVM과 MVC 패턴의 구조에대해 설명할 수 있어야 함!
+- MVVM과 MVC 패턴의 구조에대 설명할 수 있어야 함!
 - 현재 기본적인 웹개발의 표준. Java도 Spring Boot MVC
 - 프론트엔드가 심각한 스파게티 코드였으면 현재는 최소화하고 있음
 - Razor 구문 : @로 시작하는 C# 문법에 대한 이해
 
-- DB연동방법
-    - 전통적인 방법 : WPF나 윈앱에서 연동방법
-    - 현대적인 방법 : EntityFramwork 방식. 쿼리를 사용하지 않음
+- DB 연동방법
+    - 전통적인 방법 : WPF나 윈앱에서 연동방법. SQL쿼리문을 직접 작성, 실행
+    - 현대적인 방법 : EntityFramework 방식. 쿼리를 사용하지 않음
         - DB First : DB를 설계해 놓고, 연결, 사용하는 방식
         - Code First : 모델 클래스만 만들어 놓고, EF가 DB에 테이블을 자동 생성
+
 
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝
 1. Kelly-1.0.0.zip 다운로드
 2. 정적파일 분석
-3. index.html 오픈, VS View > Shared > _Layout.cshtml 디자인 태그 옮기기
-4. wwwroot 내 vendor 에서 Bootstrap 관련 폴더삭제
+3. index.html 오픈, VS Views > Shared > _Layout.cshtml 디자인 태그 옮기기
+4. wwwroot 내 vendor 에서 Bootstrap 관련 폴더삭제   
     - php 관련도 추후 삭제 필요
 5. _Layout.cshtml 작업
 
@@ -554,3 +551,4 @@ https://github.com/user-attachments/assets/60b3cc81-2464-43fa-a746-1daaa8e60e0d
 ### ASP.NET Core
 
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
+1. to be continued...

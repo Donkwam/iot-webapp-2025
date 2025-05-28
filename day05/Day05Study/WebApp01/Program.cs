@@ -1,4 +1,4 @@
-﻿namespace WebApp01
+namespace WebApp01
 {
     public class Program
     {
@@ -16,6 +16,7 @@
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();

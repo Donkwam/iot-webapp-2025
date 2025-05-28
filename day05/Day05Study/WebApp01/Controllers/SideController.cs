@@ -8,6 +8,7 @@ namespace WebApp01.Controllers
         {
             return View();
         }
+
         public IActionResult Post()
         {
             return View();
