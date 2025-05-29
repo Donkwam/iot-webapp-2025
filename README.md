@@ -73,6 +73,7 @@
 - img, audio, video : 이미지, 오디오, 비디오 
 - [소스](./day01/html05.html), [소스](./day01/html06.html)
 - form, input, button, select, textarea, label : 입력양식, 텍스트박스, 버튼, 콤보박스, 여러줄텍스트박스, 라벨
+    
 - progress : 진행률
 - div, span : 공간분할
 
@@ -571,10 +572,10 @@
 6. DB연동
     - NuGet 패키지
         - Bogus (Python Faker 라이브러리)
-        - Microsoft.EntityFrameworkCore
-        - Microsoft.EntityFrameworkCore.Tools
-        - Pomelo.EntityFrameworkCore.MySql
-            - version 8을 설치하면 버전충돌! 7.0.0으로 설치할 것
+        - `Microsoft.EntityFrameworkCore` 8.0.x
+        - `Microsoft.EntityFrameworkCore.Tools` 8.0.x
+        - `Pomelo.EntityFrameworkCore.MySql` 8.0.3
+            - EntityFrameworkCore는 전부 Version Major 숫자가 일치해야 함
     - EntityFramework Code First 방식
         - DB를 잘 몰라도 웹개발 가능토록 만든 기술
     
@@ -599,3 +600,28 @@
         Done.
         PM>
         ```
+    - MtSQL Workbench 해당 스키마 (DB)에 News 테이블 생성 확인, 더미데이터 입력
+    - NewsController 클래스 생성
+    - Entity Framwork를 사용하여 뷰가 포함된 MVC 컨트롤러 선택
+
+7. Controller 설명
+    - CRUD 중
+        - SELECT는 GET메서드만 존재
+        - 데이터가 처리되면 INSERT, UPDATE 기능에는 GET, POST메서드 둘 다 필요
+        - form태그 `asp-action`이 POST 메서드
+
+8. 개발콘솔에서 CRUD 로그 확인
+
+    <img src="./image/web0015.png" width="600">
+
+9. 작업화면
+
+    
+
+## 6일차
+
+### ASP.NET Core
+
+#### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
+- 뉴스, 게시판 완료
+- 
