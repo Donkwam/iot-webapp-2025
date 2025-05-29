@@ -551,4 +551,8 @@
 ### ASP.NET Core
 
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
-1. to be continued...
+1. _Layout.cshtml 작업 계속
+    - head, nav, footer, script영역 공통부분
+    - main.js 소스를 site.js로 복사/붙여넣기
+    - 원본 head의 google font 태그 그대로 사용
+    - ASP.NET Core에서 생성한
