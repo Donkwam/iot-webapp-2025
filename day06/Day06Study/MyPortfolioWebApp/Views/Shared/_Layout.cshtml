@@ -39,10 +39,10 @@
                     <li><a asp-controller="Resume" asp-action="Services">Services</a></li>
                     <li><a asp-controller="Resume" asp-action="Portfolio">Portfolio</a></li>
                     <li class="dropdown">
-                        <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <a href="#"><span>Board</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">FreeBoard</a></li>
+                            <li><a asp-controller="News" asp-action="Index">News</a></li>
+                            <li><a asp-controller="Board" asp-action="Index">Board</a></li>
                         </ul>
                     </li>
                     <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
@@ -59,10 +59,10 @@
 
         </div>
     </header>
-
-        <main class="main">
-            @RenderBody()
-        </main>
+    <!-- 배경 이미지 여백땜분에 <div container 삭제 -->
+    <main class="main">
+        @RenderBody()
+    </main>
 
     <footer id="footer" class="footer light-background">
 
