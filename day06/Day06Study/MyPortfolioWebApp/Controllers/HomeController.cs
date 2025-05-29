@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MyPortfolioWebApp.Models;
 using System.Diagnostics;
 
@@ -18,10 +18,11 @@ namespace MyPortfolioWebApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult about()
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

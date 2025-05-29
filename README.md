@@ -551,8 +551,51 @@
 ### ASP.NET Core
 
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
-1. _Layout.cshtml 작업 계속
+1. Properties > launchSettgins.json
+    - hotReloadEnabled 설정키 추가
+2. _Layout.cshtml 작업 계속
     - head, nav, footer, script영역 공통부분
     - main.js 소스를 site.js로 복사/붙여넣기
     - 원본 head의 google font 태그 그대로 사용
     - ASP.NET Core에서 생성한
+3. 원본 이미지 등 정적리소스를 변경시 반영안되는 경우
+    - 웹브라우저에 캐시가 남아있기 때문
+    - 웹브라우저 설정 > 개인정보 보호 및 보안 > 인터넷 사용기록 및 삭제 > 전체삭제
+    - 웹브라우저가 없는 리소스는 재다운로드
+4. HomeController에 About 메서드 생성
+    - 뷰 추가
+    - ASP.NET Core 링크 asp-controller, asp-action 속성을 사용해야
+5. About.cshtml부터 Contact.cshtml까지
+    - CSS 부터 적용
+
+6. DB연동
+    - NuGet 패키지
+        - Bogus (Python Faker 라이브러리)
+        - Microsoft.EntityFrameworkCore
+        - Microsoft.EntityFrameworkCore.Tools
+        - Pomelo.EntityFrameworkCore.MySql
+            - version 8을 설치하면 버전충돌! 7.0.0으로 설치할 것
+    - EntityFramework Code First 방식
+        - DB를 잘 몰라도 웹개발 가능토록 만든 기술
+    
+    - Model > News 클리스 생성
+    - appsettings.json, DB연결문자열 추가
+    - Model > ApplicationDbContext 클래스 생성
+    - Program.cs에서 초기화 설정에 DB연결을 추가
+
+    - 도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔로 진입. 아래의 1, 2번 명령어를 순차적 실행
+        ```shell
+        pM1> add-migration AddNewsToDatabase
+        Build started...
+        ...
+        Build succeeded.
+        To undo this action, use Remove-Migration
+
+        PM2> update-database
+        Build started...
+        ...
+        Build succeeded.
+        ...
+        Done.
+        PM>
+        ```
