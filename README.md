@@ -623,6 +623,13 @@
 
 ### ASP.NET Core
 
+#### EntityFramework DB First
+- DB를 먼저 설계하고 관련된 C#코드를 위저드가 자동으로 만들어주는 방식
+- EntityFramework DB연동방식 : ORM (Object-Relational Mapping)방식
+    - 제일 최근의 DB연동기법
+    - Spring Boot JPA, myBatis 과 동일
+    - EntityFramwork - WPF, 윕앱, 웹앱
+
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
 - 뉴스, 게시판 완료
 - 한글화
