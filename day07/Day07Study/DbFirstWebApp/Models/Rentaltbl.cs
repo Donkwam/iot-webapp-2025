@@ -14,8 +14,8 @@ public partial class Rentaltbl
     public DateTime? RentalDate { get; set; }
 
     public DateTime? ReturnDate { get; set; }
-
+    // 부모로 Bookstbl 연결
     public virtual Bookstbl BookIdxNavigation { get; set; } = null!;
-
+    // 부모 Membertbl 연결
     public virtual Membertbl MemberIdxNavigation { get; set; } = null!;
 }
