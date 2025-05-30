@@ -630,6 +630,35 @@
     - Spring Boot JPA, myBatis 과 동일
     - EntityFramwork - WPF, 윕앱, 웹앱
 
+#### EF DB First 연습
+1. 프로젝트 생성
+2. NuGet 패키지관리자
+    - Microsoft.EntitFramworkCore 8.0.16
+    - Microsoft.EntitFramworkCore.Tools 8.0.16
+    - Microsoft.EntitFramworkCore.Design 8.0.16 (옵션) 
+    - `MySql.EntityFrameworkCore` 8.0.14 (DB First시 반드시 필요!!)
+    - pomelo.EntityFrameworkCore.MtSql 8.0.3
+3. appsetting.json에 DB연결 문자열 추가
+4. NuGet 패키지 관리자 콘솔에서 해당 프로젝트로 변경(기본프로젝트 드롭다운)
+5. 아래 내용 입력
+    ```shell
+    PM> dir
+        디렉터리: C:\Source\iot-webapp-2025\day07\Day07Study
+    Mode                 LastWriteTime         Length Name                                                                                                                                                                               
+    ----                 -------------         ------ ----                                                                                                                                                                               
+    d-----        2025-05-30   오전 9:31            DbFirstWebApp                                                                                                                                                                      
+    d-----        2025-05-30   오전 9:22            MyPortfolioWebApp                                                                                                                                                                  
+    -a----        2025-05-29   오후 5:02       1133 Day07Study.sln                                                                                                                                                                     
+
+    PM> cd DbFirstWebApp
+
+    PM> Scaffold-DbContext "Server=localhost;Database=bookrentalshop;Uid=root;Pwd=12345;Charset=utf8;" MySql.EntityFrameworkCore -OutputDir Models
+    Build started...
+    Build succeeded.
+    ...
+    PM>
+    ```
+
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
 - 뉴스, 게시판 완료
 - 한글화
