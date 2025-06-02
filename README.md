@@ -630,6 +630,7 @@
     - Spring Boot JPA, myBatis 과 동일
     - EntityFramwork - WPF, 윕앱, 웹앱
 - DB의 테이블 내용을 VD Models에 가져온 이후는 Code First, DB First 작업이 동일
+- 자동 완성으로 그냥 사용은 불가. 수정이 필요
 
 #### EF DB First 연습
 1. 프로젝트 생성
