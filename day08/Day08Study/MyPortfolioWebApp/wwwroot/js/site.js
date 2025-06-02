@@ -183,4 +183,6 @@
 
     });
 
+    // trumbowyg 에디터 활정화. jQuery로 변경
+    $('.editer').trumbowyg();
 })();

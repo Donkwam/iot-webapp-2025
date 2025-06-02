@@ -21,7 +21,9 @@ namespace MyPortfolioWebApp.Controllers
         // GET: News
         public async Task<IActionResult> Index()
         {
-            return View(await _context.News.ToListAsync());
+            return View(await _context.News
+                                .OrderByDescending(o => o.PostDate).
+                                ToListAsync());    
         }
 
         // GET: News/Details/5
@@ -38,6 +40,11 @@ namespace MyPortfolioWebApp.Controllers
             {
                 return NotFound();
             }
+
+            // 조회수 증가 로직
+            news.ReadCount++;
+            _context.News.Update(news);
+            await _context.SaveChangesAsync();
 
             return View(news);
         }
@@ -57,8 +64,12 @@ namespace MyPortfolioWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 _context.Add(news);
                 await _context.SaveChangesAsync();
+
+                TempData["success"] = "뉴스 저장 성공!";
+
                 return RedirectToAction(nameof(Index));
             }
             return View(news);
@@ -85,7 +96,7 @@ namespace MyPortfolioWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Writer,Title,Description,PostDate,ReadCount")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description")] News news)
         {
             if (id != news.Id)
             {
@@ -96,7 +107,16 @@ namespace MyPortfolioWebApp.Controllers
             {
                 try
                 {
-                    _context.Update(news);
+                    // 방식2 원본을 찾아서 수정해주는 방식
+                    var existingNews = await _context.News.FindAsync(id);
+                    if (existingNews == null)
+                    {
+                        return NotFound();
+                    }
+
+                    existingNews.Title = news.Title;
+                    existingNews.Description = news.Description;
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyPortfolioWebApp.Models
@@ -11,20 +12,24 @@ namespace MyPortfolioWebApp.Models
         public int Id { get; set; }
 
         [DisplayName("작성자")]
-        public string Writer { get; set; }
+        [BindNever] // 폼에서의 입력무시. 서버에서 설정
+        public string? Writer { get; set; } // Nullable로 변경하면 Validation에서 제외
 
-        [Required] // Not null
         [DisplayName("뉴스제목")]
-        public string Title { get; set; }
+        [Required(ErrorMessage = "{0}은 필수입니다.")]
+        public string? Title { get; set; }
 
         [DisplayName("뉴스내용")]
-        public string Description { get; set; }
+        [Required(ErrorMessage = "{0}은 필수입니다.")]
+        public string? Description { get; set; }
 
         [DisplayName("작성일")]
         [DisplayFormat(DataFormatString = "{0:yyyy년 MM월 dd일}", ApplyFormatInEditMode = true)]
+        [BindNever] // 폼에서의 입력무시. 서버에서 설정
         public DateTime PostDate { get; set; }
 
         [DisplayName("조회수")]
+        [BindNever] // 폼에서의 입력무시. 서버에서 설정
         public int ReadCount { get; set; }
     }
 }

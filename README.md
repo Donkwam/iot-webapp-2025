@@ -547,7 +547,7 @@
 
     <img src="./image/web0013.png" width="600">
 
-## 5일차
+## 6일차
 
 ### ASP.NET Core
 
@@ -619,7 +619,7 @@
     https://github.com/user-attachments/assets/33b49f9b-946b-44ae-9ad2-ae6521bf1e7d
     
 
-## 6일차
+## 7일차
 
 ### ASP.NET Core
 
@@ -670,7 +670,37 @@
 
     <img src="./image/web0017.png" width="600">
 
+## 8일차
+
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
+1. 뉴스 게시글 수정
+    - 리스트 CSS 작성 (제목줄 스타일, 행별 배경색, 마우스오버시 배경색변경)
+    - Model에서 Validation Check 에러나는 타입은 string 밖에 없음
+    - public string Writer -> `public string? Writer`로 변경!!
+    - Create.cshtml과 Edit.cshtml에서 필요없는 `입력값 필드`(Writer, PostDate, ReadCnt) 삭제
+    - 뷰 화면, 스타일 조정(container 넓이) 맟추기
+    - Create, Edit `포스트 메서드 수정`
+    - Delete는 간단함
+    - 뉴스 조회건을 최신건을 위로 정렬
+2. 게시글 조회수 올리기
+3. 토스트 메시지
+    - 컨트롤러에서 뷰에 보이고 싶은 테이터를 전달하는 변수
+        - viewData, ViewBag, TempData 등
+    - partial View 생성
+
+        <img src="./image/web0019.png" width="500">
+
+        - View.cshtml -> _Notification.cshtml 변경
+        - Index.cshtml에 TempData로 집어넣은 부분을 이동
+        - Index에 <partial name="_Notification">추가
+    - Toastr 클라이언트 라이브러리 사용
+        - Github 설명대로 css,js 링크 추가
+    - _Notification.cshtml 코드 수정
+4. HTML 에디터 추가
+    - 본문 내용을 HTML화 해서 괜찮은 디자인의 컨텐츠가 되도록 컴포넌트
+    - 유사한 라이브러리 : Trumbowg, CKEditor 5(기능)
+
 - 뉴스, 게시판 완료
 - 한글화
 - 마무리
+
