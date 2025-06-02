@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolioWebApp.Models;
 using System.Diagnostics;
 
@@ -18,7 +18,7 @@ namespace MyPortfolioWebApp.Controllers
             return View();
         }
 
-        public IActionResult about()
+        public IActionResult About()
         {
             return View();
         }

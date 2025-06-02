@@ -1,4 +1,4 @@
-ï»¿/**
+/**
 * Template Name: Kelly
 * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
 * Updated: Aug 07 2024 with Bootstrap v5.3.3
@@ -423,43 +423,42 @@ h6 {
     position: relative;
 }
 
-    .footer .copyright p {
-        margin-bottom: 0;
-    }
+.footer .copyright p {
+    margin-bottom: 0;
+}
 
-    .footer .social-links {
-        margin-top: 20px;
-    }
+.footer .social-links {
+    margin-top: 20px;
+}
 
-        .footer .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-            font-size: 16px;
-            color: color-mix(in srgb, var(--default-color), transparent 50%);
-            margin: 0 5px;
-            transition: 0.3s;
-        }
+.footer .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 16px;
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
+    margin: 0 5px;
+    transition: 0.3s;
+}
 
-            .footer .social-links a:hover {
-                color: var(--accent-color);
-                border-color: var(--accent-color);
-            }
+.footer .social-links a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
 
-    .footer .credits {
-        margin-top: 10px;
-        font-size: 13px;
-        text-align: center;
-    }
+.footer .credits {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
 
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
-
 #preloader {
     position: fixed;
     inset: 0;
@@ -501,8 +500,6 @@ h6 {
         opacity: 0;
     }
 }
-
-    
 
 /*--------------------------------------------------------------
 # Scroll Top Button
@@ -743,7 +740,6 @@ section,
         line-height: 0;
     }
 
-
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
@@ -974,6 +970,7 @@ section,
         background: var(--background-color);
         border: 2px solid var(--accent-color);
     }
+
 
 /*--------------------------------------------------------------
 # Services Section
@@ -1206,104 +1203,65 @@ section,
     }
 
 /*--------------------------------------------------------------
-# Portfolio Section
+# Portfolio Details Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters {
-    padding: 0;
-    margin: 0 auto 20px auto;
-    list-style: none;
-    text-align: center;
+.portfolio-details .portfolio-details-slider img {
+    width: 100%;
 }
 
-    .portfolio .portfolio-filters li {
-        cursor: pointer;
-        display: inline-block;
-        padding: 8px 20px 10px 20px;
-        margin: 0;
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 1;
-        margin-bottom: 5px;
-        border-radius: 50px;
-        transition: all 0.3s ease-in-out;
-        font-family: var(--heading-font);
-    }
-
-        .portfolio .portfolio-filters li:hover,
-        .portfolio .portfolio-filters li.filter-active {
-            color: var(--contrast-color);
-            background-color: var(--accent-color);
-        }
-
-        .portfolio .portfolio-filters li:first-child {
-            margin-left: 0;
-        }
-
-        .portfolio .portfolio-filters li:last-child {
-            margin-right: 0;
-        }
-
-@media (max-width: 575px) {
-    .portfolio .portfolio-filters li {
-        font-size: 14px;
-        margin: 0 0 10px 0;
-    }
-}
-
-.portfolio .portfolio-item {
+.portfolio-details .portfolio-details-slider .swiper-pagination {
+    margin-top: 20px;
     position: relative;
-    overflow: hidden;
 }
 
-    .portfolio .portfolio-item .portfolio-info {
-        opacity: 0;
-        position: absolute;
-        left: 12px;
-        right: 12px;
-        bottom: -100%;
-        z-index: 3;
-        transition: all ease-in-out 0.5s;
-        background: color-mix(in srgb, var(--surface-color), transparent 10%);
-        padding: 15px;
+    .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+        opacity: 1;
     }
 
-        .portfolio .portfolio-item .portfolio-info h4 {
-            font-size: 18px;
-            font-weight: 600;
-            padding-right: 50px;
+    .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+        background-color: var(--accent-color);
+    }
+
+.portfolio-details .portfolio-info {
+    background-color: var(--surface-color);
+    padding: 30px;
+    box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+    .portfolio-details .portfolio-info h3 {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    }
+
+    .portfolio-details .portfolio-info ul {
+        list-style: none;
+        padding: 0;
+        font-size: 15px;
+    }
+
+        .portfolio-details .portfolio-info ul li + li {
+            margin-top: 10px;
         }
 
-        .portfolio .portfolio-item .portfolio-info p {
-            color: color-mix(in srgb, var(--default-color), transparent 30%);
-            font-size: 14px;
-            margin-bottom: 0;
-            padding-right: 50px;
-        }
+.portfolio-details .portfolio-description {
+    padding-top: 30px;
+}
 
-        .portfolio .portfolio-item .portfolio-info .preview-link,
-        .portfolio .portfolio-item .portfolio-info .details-link {
-            position: absolute;
-            right: 50px;
-            font-size: 24px;
-            top: calc(50% - 14px);
-            color: color-mix(in srgb, var(--default-color), transparent 30%);
-            transition: 0.3s;
-            line-height: 0;
-        }
+    .portfolio-details .portfolio-description h2 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
 
-            .portfolio .portfolio-item .portfolio-info .preview-link:hover,
-            .portfolio .portfolio-item .portfolio-info .details-link:hover {
-                color: var(--accent-color);
-            }
-
-        .portfolio .portfolio-item .portfolio-info .details-link {
-            right: 14px;
-            font-size: 28px;
-        }
-
-    .portfolio .portfolio-item:hover .portfolio-info {
-        opacity: 1;
-        bottom: 0;
+    .portfolio-details .portfolio-description p {
+        padding: 0;
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
     }
 
 /*--------------------------------------------------------------
@@ -1407,13 +1365,13 @@ section,
         background: color-mix(in srgb, var(--accent-color), transparent 25%);
     }
 
-/* ì´ì™¸ ì»¤ìŠ¤í…€í•˜ê³  ì‹¶ì€ ìŠ¤íƒ€ì¼ì´ ìˆìœ¼ë©´ ì•„ë˜ ì‘ì„±í•  ê²ƒ*/
+/* ÀÌ¿Ü Ä¿½ºÅÒÇÏ°í ½ÍÀº ½ºÅ¸ÀÏÀÌ ÀÖÀ¸¸é ¾Æ·¡ ÀÛ¼ºÇÒ °Í */
 /*
     board-table
 */
-/board-table {
+.board-table {
     width: 100%;
-    color: #333333; /* #333ê³¼ ë™ì¼ */
+    color: #333333;  /* #333°ú µ¿ÀÏ */
     font-size: 14px;
     background-color: #f5f5f5;
     border-collapse: collapse;
@@ -1423,27 +1381,28 @@ section,
     padding: 0.5rem 0.5rem;
 }
 
-/* board-table í—¤ë”ë¶€ë¶„ */
+/* board-table Çì´õºÎºĞ */
     .board-table thead tr {
-        border-color: #67C5B9;
-        color: white;
+        background-color: #67C5B9;
+        color: #FFFFFF;
         font-weight: bold;
         text-align: center;
     }
 
-    /* ë³¸ë¬¸ rowì¤‘ í™€ìˆ˜(odd)ëŠ” í°ìƒ‰ë°°ê²½ */
+    /* º»¹® rowÁß È¦¼ö(odd)´Â Èò»ö¹è°æ */
     .board-table tbody tr:nth-child(odd) {
-        background-color: #FFFFFF;
+        background-color: #FFFFFF; 
     }
 
-    /* ë³¸ë¬¸ rowì¤‘ ì§ìˆ˜(even)ëŠ” ì—°í•œíšŒìƒ‰ë°°ê²½ */
+    /* º»¹® rowÁß Â¦¼ö(even)´Â ¿¬ÇÑÈ¸»ö¹è°æ */
     .board-table tbody tr:nth-child(even) {
         background-color: #F9F9F9;
     }
-    /* ë§ˆìš°ìŠ¤ì˜¤ë²„ íš¨ê³¼ */
+
+    /* ¸¶¿ì½º¿À¹ö È¿°ú */
     .board-table tbody tr:hover {
         background-color: #E0F7FA;
-        transition: background-color 0.2s ease-in-out; /* ë°°ê²½ìƒ‰ ì• ë‹ˆë©”ì´ì…˜ íš¨ê³¼ */
+        transition: background-color 0.2s ease-in-out; /* ¹è°æ»ö ¾Ö´Ï¸ŞÀÌ¼Ç È¿°ú */
     }
 
     .board-table tbody tr:hover a:hover {
@@ -1454,7 +1413,7 @@ section,
         text-align: center;
     }
 
-/* btn-kelly í´ë˜ìŠ¤. ìƒ‰ìƒë³€ê²½ ë¶€íŠ¸ìŠ¤íŠ¸ë© ë²„íŠ¼ì— ë””ìì¸ì¶”ê°€ ì ìš© */
+/* btn-kelly Å¬·¡½º. »ö»óº¯°æ ºÎÆ®½ºÆ®·¦ ¹öÆ°¿¡ µğÀÚÀÎÃß°¡Àû¿ë */
 .btn-kelly {
     background-color: #67C7BB;
     color: white;

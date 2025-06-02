@@ -13,10 +13,12 @@ namespace MyPortfolioWebApp.Controllers
         {
             return View();
         }
+
         public IActionResult Portfolio()
         {
             return View();
         }
+
         public IActionResult Detail()
         {
             return View();

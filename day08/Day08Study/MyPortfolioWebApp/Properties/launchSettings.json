@@ -17,7 +17,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "hotReloadEnabled": true  // 핫다시 리로드 항상실행
+      "hotReloadEnabled": true   // 핫다시 리로드 항상 실행
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -25,7 +25,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "hotReloadEnabled": true // 핫다시 리로드 항상실행
+      "hotReloadEnabled": true // 핫다시 리로드 항상 실행
     }
   }
 }

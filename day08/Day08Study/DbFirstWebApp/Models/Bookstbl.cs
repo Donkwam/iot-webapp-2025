@@ -18,8 +18,10 @@ public partial class Bookstbl
     public string? Isbn { get; set; }
 
     public decimal? Price { get; set; }
-    // 부모로 Divtbl을 가지고 있다.
+
+    // 부모로 Divtbl을 가지고 있다
     public virtual Divtbl DivisionNavigation { get; set; } = null!;
-    // 자식으로 Rentaltbl을 가지고 있다.
+
+    // 자식으로 RentalTbl을 가지고 있다
     public virtual ICollection<Rentaltbl> Rentaltbls { get; set; } = new List<Rentaltbl>();
 }

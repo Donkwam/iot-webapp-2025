@@ -5,6 +5,10 @@
     {
       "library": "Trumbowyg@2.27.3",
       "destination": "wwwroot/Trumbowyg/"
+    },
+    {
+      "library": "dompurify@3.2.6",
+      "destination": "wwwroot/dompurify/"
     }
   ]
 }
