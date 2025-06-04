@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+ï»¿using Microsoft.EntityFrameworkCore;
 using MyPortfolioWebApp.Models;
 
 namespace MyPortfolioWebApp
@@ -11,7 +11,7 @@ namespace MyPortfolioWebApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            // DB¿¬°á ÃÊ±âÈ­
+            // DBì—°ê²° ì´ˆê¸°í™”
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(
                 builder.Configuration.GetConnectionString("SmartHomeConnection"),
                 ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("SmartHomeConnection"))

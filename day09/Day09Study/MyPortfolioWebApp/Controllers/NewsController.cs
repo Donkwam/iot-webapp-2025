@@ -15,7 +15,7 @@ namespace MyPortfolioWebApp.Controllers
 
         // GET: News . http://locahost:5234/News/Index 요청했음
         // param int page는 처음 게시판은 무조건 1페이지부터 시작
-        public async Task<IActionResult> Index(int page = 1)
+        public async Task<IActionResult> Index(int page = 1, string search = "")
         {
             // 뷰쪽에 보내고 싶은 데이터
             //ViewData["Key"] //ViewBag.Title //TempData["Key"]
@@ -34,7 +34,8 @@ namespace MyPortfolioWebApp.Controllers
 
             // 최종단계
             // 페이지 개수
-            var totalCount = _context.News.Count();
+            //var totalCount = _context.News.FromSql($@"SELECT * FROM News WHERE Title LIKE '%{search}%'").Count(); // 전체 게시글 수
+            var totalCount = _context.News.Where(n => EF.Functions.Like(n.Title,$"%{search}%")).Count(); // 전체 게시글 수
             var countList = 10; // 한페이지에 기본 뉴스갯수 10개
             var totalPage = totalCount / countList; // 한페이지당 개수로 나누면 전체페이지 수
             // HACK : 게시판페이지 중요로직. 남는 데이터도 한페이지를 차지해야함
@@ -57,9 +58,10 @@ namespace MyPortfolioWebApp.Controllers
             ViewBag.EndPage = endPage;
             ViewBag.Page = page;
             ViewBag.TotalPage = totalPage;
+            ViewBag.Search = search; // 검색어
 
             // 저장프로시저 호출
-            var news = await _context.News.FromSql($"CALL New_PagingBoard({startCount}, {endCount})").ToListAsync();
+            var news = await _context.News.FromSql($"CALL New_PagingBoard({startCount}, {endCount}, {search})").ToListAsync();
             return View(news);
         }
 
