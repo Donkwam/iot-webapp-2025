@@ -29,9 +29,9 @@
                 <a asp-controller="News" asp-action="Create"
                    class="btn btn-sm btn-success btn-kelly">Create</a>
             </div>
-            <div class="col-6 ">
+            <div class="col-6">
                 <form asp-action="Index" method="get">
-                    <div class="input-group input-group-sm">
+                    <div class="input-group input-group-sm justify-content-end">
                         <input type="text" id="search" name="search" class="form-control-sm" value="@search" />
                         <button type="submit" class="btn btn-success">검색</button>
                     </div>
@@ -85,10 +85,10 @@
         <div class="text-center mt-3">
             <div class="in">
                 <ul class="pagination pagination-sm justify-content-center">
-                    @if (startPage > 1) // 첫페이지 버튼
+                    @if (page > 1) // 첫페이지 버튼
                     {
                         <li class="page-item"><a href="?page=1&search=@search" class="page-link">≪</a></li>
-                    }
+                    }                 
 
                     @if (page > 1) // 이전페이지 버튼
                     {
@@ -106,12 +106,13 @@
                             <li class="page-item"><a href="?page=@pcount&search=@search" class="page-link">@pcount</a></li>
                         }
                     }
-                    @if (page < totalPage) // 다음페이지
+
+                    @if (page <totalPage) // 다음페이지
                     {
                         <li class="page-item"><a href="?page=@(page + 1)&search=@search" class="page-link">＞</a></li>
                     }
 
-                    @if (page != totalPage)
+                    @if (page != totalPage) // 마지막 페이지
                     {
                         <li class="page-item"><a href="?page=@totalPage&search=@search" class="page-link">≫</a></li>
                     }
@@ -119,4 +120,6 @@
             </div>
         </div>
     </div>
+    
+
 </section>
