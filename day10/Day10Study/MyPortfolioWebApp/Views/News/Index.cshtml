@@ -1,4 +1,6 @@
-﻿@model IEnumerable<MyPortfolioWebApp.Models.News>
+﻿@inject SignInManager<CustomUser> SignInManager
+@inject UserManager<CustomUser> UserManager
+@model IEnumerable<MyPortfolioWebApp.Models.News>
 
 @{
     // ViewData["Title"] = "Index";
@@ -26,8 +28,11 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-between mb-2">
             <div class="col-3">
-                <a asp-controller="News" asp-action="Create"
-                   class="btn btn-sm btn-success btn-kelly">Create</a>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a asp-controller="News" asp-action="Create"
+                       class="btn btn-sm btn-success btn-kelly">Create</a>     
+                }
             </div>
             <div class="col-6">
                 <form asp-action="Index" method="get">

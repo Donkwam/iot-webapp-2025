@@ -1,4 +1,7 @@
-﻿
+﻿@* 의존성 주입(Dependency Injection)으로 객체 추가 *@
+@inject SignInManager<CustomUser> SignInManager
+@inject UserManager<CustomUser> UserManager
+
 @functions {
     // 아래의 HTML에서만 사용할 C# 메서드 정의
     bool IsActive(string controller, string action)
@@ -44,7 +47,7 @@
             <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center me-auto me-xl-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">PARK KWANHO</h1>
+                <h1 class="sitename">WDK</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -68,11 +71,22 @@
             </nav>
 
             <div class="header-social-links">
-                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <!-- 로그인/회원가입 영역 -->
+                @if (SignInManager.IsSignedIn(User)) // 로그인을 했으면!
+                {
+                    <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                        <button type="submit" class="link-kelly" title="@User.Identity.Name"><i class="bi bi-unlock2-fill"></i></button>
+                    </form>
+                }
+                else // 로그인상태가 아니면
+                {
+                    <a asp-controller="Account" asp-action="Login" class="login" title="로그인"><i class="bi bi-lock-fill"></i></a>
+                }
+                <a asp-controller="Account" asp-action="Register" class="register" title="회원가입"><i class="bi bi-person-fill-add"></i></a>
+                <a href="#" class="instagram" title="인스타그램"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/mg-sung-309125261/" target="_blank" class="linkedin" title="링크인"><i class="bi bi-linkedin"></i></a>
             </div>
+
 
         </div>
     </header>

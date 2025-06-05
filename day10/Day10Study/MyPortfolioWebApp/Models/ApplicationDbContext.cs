@@ -8,15 +8,19 @@ namespace MyPortfolioWebApp.Models
     // 일련의 CRUD 작업을 모두 래핑해서 사용할 수 있도록 만들어놓은 클래스
     // CRUD 쿼리를 직접 작성할 필요가 없음
     // ASP.NET Core Identity를 사용하려면 DBContext에서 IdentityDbContext로 변경
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<CustomUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 
-        //protected ApplicationDbContext()
-        //{
-        //}
+        protected ApplicationDbContext()
+        {
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
 
         // 아래에 DB와 연동할 모델폴더내 클래스를 선언필수
         public DbSet<News> News { get; set; }

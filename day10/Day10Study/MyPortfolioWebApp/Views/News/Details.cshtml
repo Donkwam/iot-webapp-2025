@@ -1,4 +1,6 @@
-﻿@using Westwind.AspNetCore.Markdown
+﻿@inject SignInManager<CustomUser> SignInManager
+@inject UserManager<CustomUser> UserManager
+@using Westwind.AspNetCore.Markdown
 @model MyPortfolioWebApp.Models.News
 
 @{
@@ -50,8 +52,11 @@
             </dl>
         </div>
         <div>
-            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-sm btn-warning">Edit</a>
-            <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-sm btn-danger">Delete</a>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-sm btn-danger">Delete</a>
+            }
             <a asp-action="Index" class="btn btn-sm btn-success">List</a>
         </div>
     </div>
