@@ -919,9 +919,15 @@
     - Program.cs에서 패스워드 정책을 간단하게 변경
 
 3. 게시판 준비
-
+    - MySql Workbench에서 Board 테이블 생성
+    - NuGet 패키지 관리자 콘솔에서 DB스캐폴드
+        - 
+    - BackupModels에서 필요한 모델클래스를 Models 이전, 수정
+    - ApplicationDbContext에 `DbSet<Board>` 추가
+    - Controller에 BoardController클래스 스캐폴딩 생성
 4. 이후 작업
     - HomeController Contact() Post메서드 신규 추가
+    - 메일관련 작업 - Pendding
 ### ASP.NET Core API서버
 
 ### AWS 클라우드 업로드

@@ -22,8 +22,11 @@ namespace MyPortfolioWebApp.Models
             base.OnModelCreating(builder);
         }
 
-        // 아래에 DB와 연동할 모델폴더내 클래스를 선언필수
+        // 아래에 DB와 연동할 모델폴더 내 클래스를 선언 필수
+        // 이거 넣고 나서 NuGet 패키지 관리자 콘솔에서 Add-Migration 수행
+        // 새로 추가된 DB 테이블 모델이 있으면 반드시 아래에 추가!!
         public DbSet<News> News { get; set; }
+        public DbSet<Board> Board { get; set; }
         public DbSet<About> About { get; set; }
         public DbSet<Skill> Skill { get; set; }
     }

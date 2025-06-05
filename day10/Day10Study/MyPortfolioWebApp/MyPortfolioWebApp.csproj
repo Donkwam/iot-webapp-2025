@@ -19,4 +19,8 @@
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.23.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BackupModels\" />
+  </ItemGroup>
+
 </Project>
