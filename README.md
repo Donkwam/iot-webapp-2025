@@ -998,7 +998,23 @@
 #### OpenAPI 형식 WebAPI 연습
 1. IoT 센서데이터를 웹API 서비스
 2. Python에서 더미데이터 100만건 생성
-3. 
+3. WebAPI 프로젝트 생성
+4. EntityFramework NuGet패키지 설치
+5. appsettings.json DB연결문자열 추가
+6. MySQL iot_datas 테이블 생성
+7. Models.iot_datas 클래스 생성
+8. Models.AppDbContext 클래스 생성
+9. Program.cs AppDbContext 초기화 추가
+10. 스캐폴딩으로 Controller 생성
+    - Get 메서드 외 모두 삭제
+11. Get 메서드 파라미터 추가, 쿼리 실행 로직 추가
+12. Swagger UI에서 테스트
+
+    <img src="./image/web0030.png" width="600">
+
+13. 웹브라우저 실행 확인
+
+    <img src="./image/web0031.png" width="600">
 
 ### AWS 클라우드 업로드
 
