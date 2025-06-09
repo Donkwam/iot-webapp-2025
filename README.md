@@ -956,6 +956,8 @@
 2. Swagger UI -> Visual Studio에 포함
 3. [Postman](https://www.postman.com/) - 가장 기능이 다양
 
+    <img src="./image/web0029.png" width="600">
+
 #### 웹서비스 4가지 메서드
 - 일반 웹사이트에서의 GET/POST는 동일
 - `GET` - 리소스(데이터) 조회
@@ -973,6 +975,8 @@
 |PUT ~/api/books/{id}|기존책 수정|Book|None|
 |DELETE ~/api/books/{id}/기존책 삭제|None|None|
 
+<img src="./image/web0026.png" width="600">
+
 1. WebAPI 프로젝트 생성
 2. Models.Book 모델 클래스 생성
 3. EntityFramework NuGet패키지 설치
@@ -982,6 +986,17 @@
 5. MySQL Book 테이블 생성
 6. Models.AppDbContext 클래스 생성
 7. Program.cs AppDbContext 초기화 추가
+8. 스캐폴딩으로 Controller 생성
+    - API > EntityFramework 사용 동작이 포함된 API컨트롤러 선택
+
+    <img src="./image/web0027.png" width="600">
+
+9. 서버 실행
+
+    <img src="./image/web0028.png" width="600">
+
+#### OpenAPI 형식 WebAPI 연습
+1. IoT 센서데이터를 웹API 서비스
 
 ### AWS 클라우드 업로드
 
