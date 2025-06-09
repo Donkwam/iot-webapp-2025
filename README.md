@@ -1016,5 +1016,11 @@
 
     <img src="./image/web0031.png" width="600">
 
+## 12일차 
+
+### ASP.NET Core API서버 (계속)
+
+#### WebAPI 서버 + 웹사이트 + 윈앱
+
 ### AWS 클라우드 업로드
 
