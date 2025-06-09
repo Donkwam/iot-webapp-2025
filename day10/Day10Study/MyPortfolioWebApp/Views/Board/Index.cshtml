@@ -2,10 +2,17 @@
 
 @{
     ViewData["Title"] = "Index";
-    // 페이징, 검색 등 필요한 ViewBag 값이 있다면 아래처럼 선언
-    // var page = ViewBag.Page;
-    // var totalPage = ViewBag.TotalPage;
-    // var search = ViewBag.Search;
+}
+
+@{
+    // 컨트롤러 변수값이 바로 사용할 수 없음
+    // ViewBag, ViewData, TempData로 전달
+    var startPage = ViewBag.StartPage;
+    var endPage = ViewBag.EndPage;
+    var page = ViewBag.Page;
+    var totalPage = ViewBag.TotalPage;
+    // 검색어도 컨트롤러에서 넘겨옴
+    var search = ViewBag.Search;
 }
 
 <section id="board" class="section">
@@ -15,50 +22,89 @@
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-between mb-2">
-            <div class="col-3">
-                <a asp-action="Create" class="btn btn-sm btn-success btn-kelly">Create</a>
-            </div>
-            <div class="col-6">
-                @* 검색 폼이 필요하다면 아래 주석 해제
-                <form asp-action="Index" method="get">
-                    <div class="input-group input-group-sm justify-content-end">
-                        <input type="text" id="search" name="search" class="form-control-sm" value="@ViewBag.Search" />
-                        <button type="submit" class="btn btn-success">검색</button>
-                    </div>
-                </form>
-                *@
-            </div>
+        <div class="d-flex justify-content-end mb-3">
+            <a asp-action="Create" class="btn btn-sm btn-success btn-kelly">✍ 새 글쓰기</a>
         </div>
-        <table class="board-table">
-            <thead>
-                <tr>
-                    <th>@Html.DisplayNameFor(model => model.Email)</th>
-                    <th>@Html.DisplayNameFor(model => model.Writer)</th>
-                    <th>@Html.DisplayNameFor(model => model.Title)</th>
-                    <th>@Html.DisplayNameFor(model => model.Contents)</th>
-                    <th>@Html.DisplayNameFor(model => model.PostDate)</th>
-                    <th>@Html.DisplayNameFor(model => model.ReadCount)</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+        <div class="col-auto d-flex justify-content-end">
+            @* 검색 폼 *@
+            <form asp-action="Index" method="get" class="d-flex mb-2">
+                <input type="text" id="search" name="search" class="form-control form-control-sm" style="width: 150px;" value="@ViewBag.Search" />
+                <button type="submit" class="btn btn-success">검색</button>
+            </form>
+        </div>
+    </div>
+
+        <div class="table-responsive">
+            <table class="board-table">
+                <thead>
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Writer)</td>
-                        <td>
-                            <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>
-                        </td>
-                        <td>@Html.DisplayFor(modelItem => item.Contents)</td>
-                        <td>@Html.DisplayFor(modelItem => item.PostDate)</td>
-                        <td>@Html.DisplayFor(modelItem => item.ReadCount)</td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
+                        <th>@Html.DisplayNameFor(model => model.Email)</th>
+                        <th>@Html.DisplayNameFor(model => model.Writer)</th>
+                        <th>@Html.DisplayNameFor(model => model.Title)</th>
+                        <th>@Html.DisplayNameFor(model => model.Contents)</th>
+                        <th>@Html.DisplayNameFor(model => model.PostDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.ReadCount)</th>
+                        <th></th>
                     </tr>
-                }
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td class="content-center">@Html.DisplayFor(modelItem => item.Writer)</td>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.Contents)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PostDate)</td>
+                            <td class="content-center">@Html.DisplayFor(modelItem => item.ReadCount)</td>
+                            <td class="input-group input-group-sm justify-content-end">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="text-center mt-3">
+                <div class="in">
+                    <ul class="pagination pagination-sm justify-content-center">
+                        @if (page > 1) // 첫페이지 버튼
+                        {
+                            <li class="page-item"><a href="?page=1&search=@search" class="page-link">≪</a></li>
+                        }
+
+                        @if (page > 1) // 이전페이지 버튼
+                        {
+                            <li class="page-item"><a href="?page=@(page-1)&search=@search" class="page-link">＜</a></li>
+                        }
+
+                        @for (var pcount = startPage; pcount <= endPage; pcount++)
+                        {
+                            if (pcount == page)
+                            {
+                                <li class="page-item"><a href="?page=@pcount&search=@search" class="page-link active">@pcount</a></li>
+                            }
+                            else
+                            {
+                                <li class="page-item"><a href="?page=@pcount&search=@search" class="page-link">@pcount</a></li>
+                            }
+                        }
+
+                        @if (page < totalPage) // 다음페이지
+                        {
+                            <li class="page-item"><a href="?page=@(page + 1)&search=@search" class="page-link">＞</a></li>
+                        }
+
+                        @if (page != totalPage) // 마지막 페이지
+                        {
+                            <li class="page-item"><a href="?page=@totalPage&search=@search" class="page-link">≫</a></li>
+                        }
+                    </ul>
+                </div>
+               
+        </div>
     </div>
 </section>
