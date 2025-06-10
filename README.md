@@ -1020,7 +1020,8 @@
 
 ### ASP.NET Core API서버 (계속)
 
-#### WebAPI 서버 + 웹사이트 + 윈앱((WPF))
+#### WebAPI 서버 + 윈앱((WPF))
+- 웹사이트나 WPF 윈앱에서는 DB연동 없이도 데이터 처리가 가능!!!
 - Todo List 오늘할일 API 서비스
 
     |API|설명|Request body|Response body|
@@ -1041,7 +1042,18 @@
     2. NuGet 패키지 관리에서 패키지 설치
         - MahApps.Metro / IconPacks
         - Microsoft.AspNet.WebApi.Client
-    3. 
+    3. UI 설정
+    4. 모델설정, 컬렉션 설정
+    5. WebAPI 호출로 CRUD 구현
+
+    <img src="./image/web0032.png" width="600">
+
+## 13일차
+
+### ASP.NET Core API서버 (계속)
+
+#### WebAPI 서버 + 웹사이트
+
 
 ### AWS 클라우드 업로드
 

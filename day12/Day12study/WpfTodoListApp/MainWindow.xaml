@@ -18,7 +18,8 @@
         <!-- UI 구성 -->
         <DataGrid x:Name="GrdTodoItems"
             Grid.Row="0" Grid.Column="0" 
-            Margin="10" Background="Gainsboro" IsReadOnly="True"></DataGrid>
+            Margin="10" Background="Gainsboro" IsReadOnly="True"
+            SelectionChanged="GrdTodoItems_SelectionChanged"></DataGrid>
 
         <GroupBox Grid.Row="0" Grid.Column="1" Margin="5" Header="할일정보">
             <Grid Margin="5">
@@ -63,9 +64,11 @@
                             Style="{StaticResource MahApps.Styles.Button.Square}"
                             Click="BtnInsert_Click"/>
                     <Button x:Name="BtnUpdate" Content="수정" Width="60" Margin="0,5,3,5"
-                            Style="{StaticResource MahApps.Styles.Button.Square.Accent}"/>
+                            Style="{StaticResource MahApps.Styles.Button.Square.Accent}"
+                            Click="BtnUpdate_Click"/>
                     <Button x:Name="BtnDelete" Content="삭제" Width="60" Margin="0,5,0,5"
-                            Style="{StaticResource MahApps.Styles.Button.Square.Highlight}"/>
+                            Style="{StaticResource MahApps.Styles.Button.Square.Highlight}"
+                            Click="BtnDelete_Click"/>
                 </StackPanel>
             </Grid>
         </GroupBox>

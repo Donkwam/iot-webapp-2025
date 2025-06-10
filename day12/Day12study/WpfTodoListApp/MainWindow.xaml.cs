@@ -37,6 +37,10 @@ namespace WpfTodoListApp
 
             // 데이터 가져오기
             GetDatas();
+
+            // 입력양식초기화
+            InitControls();
+
         }
 
         private async Task GetDatas()
@@ -84,6 +88,97 @@ namespace WpfTodoListApp
                 response.EnsureSuccessStatusCode();
 
                 GetDatas();
+
+                // 입력양식초기화
+                InitControls(); ;
+
+            }
+            catch (Exception ex)
+            {
+                // 예외메시지
+                await this.ShowMessageAsync("API호출 에러", ex.Message);
+            }
+        }
+
+        private async void GrdTodoItems_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            try
+            {
+                //await this.ShowMessageAsync("클릭", "클릭확인");
+                var Id = (GrdTodoItems.SelectedItem as TodoItem)?.Id;   // ?. -> Null이 생겨도 예외발생안함
+
+                if (Id == null) return; // 이 구문은 만나야 아래 로직이 실행안됨
+
+                // /api/TodoItems/{Id} GET 메서드 API 호출
+                var response = await client.GetAsync($"/api/TodoItems/{Id}");
+                response.EnsureSuccessStatusCode();
+
+                var item = await response.Content.ReadAsAsync<TodoItem>();
+
+                TxtId.Text = item.Id.ToString();
+                TxtTitle.Text = item.Title.ToString();
+                DtpTodoDate.SelectedDate = DateTime.Parse(item.TodoDate.Insert(4, "-").Insert(7, "-"));
+                CboIsComplete.SelectedValue = item.IsComplete;
+            }
+            catch (Exception ex)
+            {
+                // 예외메시지
+                await this.ShowMessageAsync("API호출 에러", ex.Message);
+            }
+        }
+
+        private async void BtnUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            try
+            {
+                var todoItem = new TodoItem
+                {
+                    Id = Convert.ToInt32(TxtId.Text),
+                    Title = TxtTitle.Text,
+                    TodoDate = Convert.ToDateTime(DtpTodoDate.SelectedDate).ToString("yyyyMMdd"),
+                    IsComplete = Convert.ToBoolean(CboIsComplete.SelectedValue)
+                };
+
+                var response = await client.PutAsJsonAsync($"/api/TodoItems/{todoItem.Id}", todoItem);
+                response.EnsureSuccessStatusCode();
+
+                GetDatas();
+
+                // 입력양식초기화
+                InitControls();
+
+
+            }
+            catch (Exception ex)
+            {
+                // 예외메시지
+                await this.ShowMessageAsync("API호출 에러", ex.Message);
+            }
+        }
+
+        private void InitControls()
+        {
+            // 입력양식초기화
+            TxtId.Text = string.Empty;
+            TxtTitle.Text = string.Empty;
+            DtpTodoDate.Text = string.Empty;
+            CboIsComplete.Text = string.Empty;
+        }
+
+        private async void BtnDelete_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            try
+            {
+                var Id = Convert.ToInt32(TxtId.Text); // 삭제는 Id만 파라미터로 전송
+
+                var response = await client.DeleteAsync($"/api/TodoItems/{Id}");
+                response.EnsureSuccessStatusCode();
+
+                GetDatas();
+
+                // 입력양식초기화
+                InitControls();
+
             }
             catch (Exception ex)
             {
