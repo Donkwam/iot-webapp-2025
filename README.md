@@ -1025,18 +1025,23 @@
 
     |API|설명|Request body|Response body|
     |:--|:--|:--|:--|
-    |GET ~/api/todoitems|모든 할일정보 가져오기|None|할일정보 배열|
-    |GET ~/api/todoitems/{id}|특정 할일정보 가져오기|None|할일정보 한 건|
-    |POST ~/api/todoitems|새 할일정보 추가|todoitems 데이터|todoitems 데이터|
-    |PUT ~/api/todoitems/{id}|기존할일 수정|todoitems|None|
-    |DELETE ~/api/todoitems/{id}|기존할일 삭제|None|None|
+    |GET /api/todoitems|모든 할일정보 가져오기|None|할일정보 배열|
+    |GET /api/todoitems/{id}|특정 할일정보 가져오기|None|할일정보 한 건|
+    |POST /api/todoitems|새 할일정보 추가|todoitems 데이터|todoitems 데이터|
+    |PUT /api/todoitems/{id}|기존할일 수정|todoitems|None|
+    |DELETE /api/todoitems/{id}|기존할일 삭제|None|None|
 
     1. 프로젝트 생성
     2. 패키지 설치
     3. DB구성, 생성
     4. 컨트롤러 생성(내용 생략, 위에 다 있음)
 
-- WPF앱 API 사용 - 데이터포털로
+- WPF앱 API 사용 - 데이터포털로 부산맛집정보앱, 영화즐겨찾기와 동일(GET 메서드만 사용)
+    1. WPF 프로젝트 생성
+    2. NuGet 패키지 관리에서 패키지 설치
+        - MahApps.Metro / IconPacks
+        - Microsoft.AspNet.WebApi.Client
+    3. 
 
 ### AWS 클라우드 업로드
 

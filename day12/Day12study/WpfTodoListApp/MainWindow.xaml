@@ -8,7 +8,7 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:iconPack="http://metro.mahapps.com/winfx/xaml/iconpacks"
     mc:Ignorable="d"
-    Title="할일리스트앱" Height="350" Width="600">
+    Title="할일리스트앱" Height="350" Width="600" Loaded="MetroWindow_Loaded">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3* "/>
@@ -51,16 +51,17 @@
 
                 <ComboBox Grid.Row="3" x:Name="CboIsComplete"
                       Margin="3"
+                      DisplayMemberPath="Key"
+                      SelectedValuePath="Value"
                       mah:TextBoxHelper.AutoWatermark="True"
                       mah:TextBoxHelper.Watermark="완료여부"
                       mah:TextBoxHelper.UseFloatingWatermark="True">
-                    <ComboBoxItem Content="완료" Tag="1" />
-                    <ComboBoxItem Content="미완료" Tag="0" />
                 </ComboBox>
 
                 <StackPanel Grid.Row="4" Margin="3" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button x:Name="BtnInsert" Content="추가" Width="60" Margin="0,5,3,5"
-                            Style="{StaticResource MahApps.Styles.Button.Square}"/>
+                            Style="{StaticResource MahApps.Styles.Button.Square}"
+                            Click="BtnInsert_Click"/>
                     <Button x:Name="BtnUpdate" Content="수정" Width="60" Margin="0,5,3,5"
                             Style="{StaticResource MahApps.Styles.Button.Square.Accent}"/>
                     <Button x:Name="BtnDelete" Content="삭제" Width="60" Margin="0,5,0,5"
