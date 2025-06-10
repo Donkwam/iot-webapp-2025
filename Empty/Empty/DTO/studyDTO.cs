@@ -2,9 +2,8 @@
 {
     public class studyDTO
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-
+        public int id { get; set; }
+        public string? u_name { get; set; }
         public string? message { get; set; }
     }
 }

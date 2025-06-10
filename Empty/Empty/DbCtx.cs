@@ -11,8 +11,8 @@ namespace Empty
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<studyzzzz>().ToTable("study");
-            modelBuilder.Entity<studyzzzz>().HasKey(s => s.Id);
+            modelBuilder.Entity<studyzzzz>().ToTable("Entity");
+            modelBuilder.Entity<studyzzzz>().HasKey(s => s.id);
         }
     }
 }

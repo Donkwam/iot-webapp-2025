@@ -2,8 +2,10 @@
 {
     public class studyzzzz
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public int Age { get; set; }
+        public int id { get; set; }
+        public string? u_name { get; set; }
+        public string? u_pas { get; set; }
+        public string? name { get; set; }
+        public int age { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-using Empty.DTO;
+ï»¿using Empty.DTO;
 using Empty.Entity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,61 +6,63 @@ namespace Empty.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ºıºıÀÌController : ControllerBase
+    public class ë¹¡ë¹¡ì´Controller : ControllerBase
     {
         private readonly DbCtx _db;
 
-        public ºıºıÀÌController(DbCtx ctx)
+        public ë¹¡ë¹¡ì´Controller(DbCtx ctx)
         {
             _db = ctx;
         }
 
-        [HttpGet("getgetget")]
+        [HttpGet("ì°¾ê¸°")]
         public ActionResult<studyDTO> Get([FromQuery] int id)
         {
             // List<studyzzzz> data = _db.studys.ToList();
 
-            var data = _db.studys.FirstOrDefault(s => s.Id == id);
+            var data = _db.studys.FirstOrDefault(s => s.id == id);
 
             return new studyDTO
             {
-                Id = data.Id,
-                Name = data.Name,
-                message = "¹¹ÀÓ¸¶"
+                id = data.id,
+                u_name = data.u_name,
+                message = "ì™œì°¾ì•„"
             };
         }
 
-        [HttpPost("ptest")]
+        [HttpPost("ë”í•˜ê¸°")]
         public IActionResult Post(registerDTO data)
         {
             studyzzzz temp = new studyzzzz
             {
-                Name = data.nName,
-                Age = data.aAge
+                u_name = data.u_name,
+                u_pas = data.u_pas,
+                age = data.age
             };
             try
             {
                 _db.studys.Add(temp);
                 _db.SaveChanges();
-                return Ok("È¸¿ø°¡ÀÔ¿Ï·á");
+                return Ok("íšŒì›ê°€ì…ì™„ë£Œ");
 
             }
             catch (Exception)
             {
-                return Problem("¼­¹ö ³­¸®³²", statusCode: 500);
+                return Problem("ì„œë²„ ë‚œë¦¬ë‚¨", statusCode: 500);
             }
         }
 
     }
     public record registerDTO(
-       string nName,
-       int aAge
+       string u_name,
+       string u_pas,
+       int age
     );
 }
 
 
 
 
-// record ÀÌ°Å ¹¹ÇÏ´Â»õ³¢ÀÓ
+// record ì´ê±° ë­í•˜ëŠ”ìƒˆë¼ì„
 
 // const int

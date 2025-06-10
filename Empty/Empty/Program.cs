@@ -1,4 +1,4 @@
-
+ï»¿
 // int main()
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +8,7 @@ namespace Empty
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);   // ¹Ìµé¿ş¾î DI ÀÇÁ¸¼º ÁÖÀÔ
+            var builder = WebApplication.CreateBuilder(args);   // ë¯¸ë“¤ì›¨ì–´ DI ì˜ì¡´ì„± ì£¼ì…
 
             // Add services to the container.
             builder.Services.AddDbContext<DbCtx>(options =>
