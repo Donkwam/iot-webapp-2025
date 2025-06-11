@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList App</title>
+    <!-- Bootstrap, jQuery 클라이언트라이브러리 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <!-- jQuery는 로드이벤트 때문에 head에 들어가야 할때도 있음 -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script>
+        // WebAPI는 HTML상에서 대부분 javascript로 호출
+        $(document).ready(function() {
+            //alert("로딩후 서비스호출합니다.");
+            // AJAX(Asyncronous JavaScript And Xml) : 비동기 자바스크립트 호출 기술
+            // C#/Python의 async/await와 동일한 기술
+            // AJAX로 WebAPI를 호출
+            $.getJSON("http://localhost:6200/api/TodoItems", function (data) {
+                // WebAPI 호출이 성공하면
+                //alert("웹 API호출 성공!!");
+                $.each(data, function (key, val) {
+                    // 텍스트 출력을 형식변경
+                    $(`<label class="list-group-item d-flex gap-3">
+                            <input class="form-check-input flex-shrink-0" type="checkbox" value="" />
+                            <span>
+                                <strong>${val.title}</strong>
+                                <small class="d-block text-body-secondary">
+                                    <i class="bi bi-calendar-check-fill"></i>
+                                    ${val.todoDate.slice(0, 4) + '-' + val.todoDate.slice(4, 6) + '-' + val.todoDate.slice(6, 8)}
+                                </small>
+                            </span>
+                        </label>`, { text: '' }).appendTo($('#todoItems'));
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="text-center mt-5">
+        <h2 class="display-5 fw-bolder">Todo List</h2>
+    </div>
+
+    <div class="container text-center">
+        <!--<ul class="list-group">
+            <li class="list-group-item">First Item</li>
+            <li class="list-group-item">Second Item</li>
+            <li class="list-group-item">Third Item</li>
+            <li class="list-group-item">Fourth Item</li>
+        </ul>-->
+
+        <div class="list-group text-start" id="todoItems">
+            <!--<label class="list-group-item d-flex gap-3">
+                <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked />
+                <span>
+                    <strong>ASP.NET Core API 학습</strong>
+                    <small class="d-block text-body-secondary">
+                        <i class="bi bi-calendar-check-fill"></i>
+                        2025-06-10
+                    </small>
+                </span>
+            </label>-->
+        </div>
+    </div> 
+
+    <!-- js관련 클라이언트 라이브러리 -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/sit.js"></script>
+</body>
+</html>

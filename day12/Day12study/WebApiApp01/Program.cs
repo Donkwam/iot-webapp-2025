@@ -11,6 +11,18 @@ namespace WebApiApp01
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            // CORS 설정
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5183") // 프론트엔드(본인포트번호) 주소
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
             // DB연결 설정 초기화로직
             builder.Services.AddDbContext<AppDbContext>(
                 options => options.UseMySql(
@@ -25,6 +37,7 @@ namespace WebApiApp01
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+            app.UseCors("AllowFrontend"); // CORS 설정 사용
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
