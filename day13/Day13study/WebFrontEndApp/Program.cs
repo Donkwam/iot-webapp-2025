@@ -1,19 +1,19 @@
-ï»¿namespace WebFrontEndApp
+namespace WebFrontEndApp
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args); // ASP.NET Core ì‹œì‘ ë¹Œë”ê°ì²´ ìƒì„±
-            // ë¹Œë”ê°ì²´ì˜ ê¸°ëŠ¥ : MVCíŒ¨í„´ ì„¤ì •, DBì„¤ì •, ê¶Œí•œì„¤ì •, APIì„¤ì • ë“± ì›¹ì•±ì˜ ì „ì²´ ì„¤ì • ë‹´ë‹¹
+            var builder = WebApplication.CreateBuilder(args);  // ASP.NET Core ½ÃÀÛ ºô´õ°´Ã¼ »ı¼º
+            // ºô´õ°´Ã¼ÀÇ ±â´É : MVCÆĞÅÏ ¼³Á¤, DB¼³Á¤, ±ÇÇÑ¼³Á¤, API¼³Á¤ µî À¥¾ÛÀÇ ÀüÃ¼ ¼³Á¤ ´ã´ç
 
-            // MVCíŒ¨í„´ ì„¤ì •
+            // MVCÆĞÅÏ ¼³Á¤
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
-            // ë¹Œë”ë¡œ ë§Œë“  appê°ì²´ ì„¤ì •
-            app.UseStaticFiles(); // wwroot í´ë”ì˜ ì •ì ë¦¬ì†ŒìŠ¤ ì‚¬ìš©í•˜ê² ìŒ
+            // ºô´õ·Î ¸¸µç app°´Ã¼ ¼³Á¤
+            app.UseStaticFiles();   // wwwroot Æú´õÀÇ Á¤Àû¸®¼Ò½º »ç¿ëÇÏ°ÚÀ½
 
             app.UseRouting();
             app.MapControllerRoute(
