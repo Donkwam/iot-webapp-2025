@@ -17,25 +17,29 @@
             // AJAX(Asyncronous JavaScript And Xml) : 비동기 자바스크립트 호출 기술
             // C#/Python의 async/await와 동일한 기술
             // AJAX로 WebAPI를 호출
-            $.getJSON("http://localhost:6200/api/TodoItems", function (data) {
-                // WebAPI 호출이 성공하면
-                //alert("웹 API호출 성공!!");
-                $.each(data, function (key, val) {
-                    // 텍스트 출력을 형식변경
-                    let isComplete = val.isComplete;
-                    $(`<label class="list-group-item d-flex gap-3">
+            var getData = function () {
+                $.getJSON("http://localhost:6200/api/TodoItems", function (data) {
+                    // WebAPI 호출이 성공하면
+                    //alert("웹 API호출 성공!!");
+                    $.each(data, function (key, val) {
+                        // 텍스트 출력을 형식변경
+                        let isComplete = val.isComplete;
+                        $(`<label class="list-group-item d-flex gap-3">
                             <input class="form-check-input flex-shrink-0" type="checkbox" value="" 
                             ${isComplete == 1 ? 'checked' : ''} />
-                            <span>
-                                <strong>${val.title}</strong>
-                                <small class="d-block text-body-secondary">
-                                    <i class="bi bi-calendar-check-fill"></i>
-                                    ${val.todoDate.slice(0, 4) + '-' + val.todoDate.slice(4, 6) + '-' + val.todoDate.slice(6, 8)}
-                                </small>
-                            </span>
-                        </label>`, { text: '' }).appendTo($('#todoItems'));
+                        <span>
+                            <strong>${val.title}</strong>
+                            <small class="d-block text-body-secondary">
+                            <i class="bi bi-calendar-check-fill"></i>
+                            ${val.todoDate.slice(0, 4) + '-' + val.todoDate.slice(4, 6) + '-' + val.todoDate.slice(6, 8)}
+                    </small>
+                </span>
+            </label>`, { text: '' }).appendTo($('#todoItems'));
+                    });
                 });
-            });
+            }
+
+            getData(); // 함수호출(파이썬로직과 동일)
 
             // btnQuery 버튼클릭 이벤트 메서드
             $('#btnQuery').click(function () {
@@ -59,16 +63,35 @@
             });
 
             // btnInsert 버튼클릭 이벤트 메서드
-            $('btnInsert').click(function () {
+            $('#btnInsert').click(function () {
                 //alert('저장버튼 클릭');
                 // 할일, 완료일자 미입력시 Validation 체크는 패스
+                // replace('-', '') : -가 한번만 제거
+                // replace(/-/g, '') : -가 여러개 제거
                 var todoItem = {
                     'id': 0,
                     'title': $('#in-title').val(),
-                    'todoDate': $('#in-todoDate').val(),
-                    'isComplete': $('#in-isComplete checked').val()
+                    'todoDate': $('#in-todoDate').val().replace(/-/g, ''),
+                    'isComplete': $('#in-isComplete').prop('checked')
                 };
-                alert(todoItem);
+
+                //alert(todoItem);
+                console.log(todoItem);  // C# Debug.Writeline()
+                // INSERT, UPDATE, DELETE는 .ajax() 사용
+                $.ajax("http://localhost:6200/api/TodoItems", {
+                    type: "POST", // 이외 PUT, DELETE
+                    data: JSON.stringify(todoItem),
+                    contentType: "application/json",
+                    success: (data) => {
+                        if (typeof (data) == "object")
+                            data = JSON.stringify(data);
+                        var item = JSON.parse(data);
+                        alert(`${item.id} / 할일이 한건 추가되었습니다.`);
+
+                        // 데이터 재조회!
+                        getData();
+                    }
+                });
             });
         });
     </script>

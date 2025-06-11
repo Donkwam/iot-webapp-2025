@@ -1070,6 +1070,8 @@
     9. input 태그로 검색부분 구현
         - Javascript와 데이터를 주고받으면 form태그가 없어도 됨
         - `<form>` - 서버사이드와 데이터를 주고 받을때 필요
+    10. 입력부분 구현
+    11. jQuery 로직 구현
 
 - AJAX : Asyncronous Javascript And Xml. 자바스크립트에서 비동기로 메서드를 호출 기술
     - 예전에 XML로만 데이터 전달. 현재는 Json으로 이전 중
@@ -1079,6 +1081,25 @@
     - WebAPI 서비스에서 Program.cs에 CORS 호출권한 설정 추가
     - 프론트엔드는 CORS 설정 필요없음
      
+    <img src="./image/web0033.png" width="400">
+
+## 14일차
+
+### ASP.NET Core API서버 (계속)
+
+#### WebAPI 서버 + 웹사이트 (계속)
+- 할일 삭제
 
 ### AWS 클라우드 업로드
+- AWS 라이트세일로 웹사이트 업로드
 
+### 부가적인 기능
+- QAuth (구글로그인)
+- 파일업로드
+- WebAPI 서버 + 웹사이트 할일 수정
+
+### MyPortfolio 완성
+
+## 15일차
+
+### 전체 마무리
