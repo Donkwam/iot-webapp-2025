@@ -1066,6 +1066,10 @@
         - _ViewStart.cshtml
         - Shared/_Layout.cshtml.css
     7. index.html에 화면UI 구현
+    8. AJAX로 WebAPI 호출하고 데이터를 화면에 뿌리는 로직 추가
+    9. input 태그로 검색부분 구현
+        - Javascript와 데이터를 주고받으면 form태그가 없어도 됨
+        - `<form>` - 서버사이드와 데이터를 주고 받을때 필요
 
 - AJAX : Asyncronous Javascript And Xml. 자바스크립트에서 비동기로 메서드를 호출 기술
     - 예전에 XML로만 데이터 전달. 현재는 Json으로 이전 중
